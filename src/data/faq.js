@@ -51,7 +51,7 @@ export const faqs = [
     id: 'organisera-marknadsavdelning',
     categories: ['organization'],
     sv: {
-      question: 'Hur organiserar man marknads-, e‑com- och CRM‑organisationerna 2026–2027 och framåt?',
+      question: 'Hur bör en marknadsavdelning organiseras 2026–2027 och framåt?',
       answer: `Samarbete, transparens, mod och kreativitet är ledord som jag tror blir ännu viktigare framåt. Jag har även snöat in på ämnet silos, varför de är skadliga för effektiviteten och varför de riskerar att bli värre när AI‑agenter gör intåg.
 
 Men låt mig backa lite först, innan jag utvecklar mina tankar.
@@ -117,7 +117,7 @@ Tänk i tre nivåer:
 - Här kan vi släppa kontroll, lågrisk, lätt att backa, tydliga guardrails`,
     },
     en: {
-      question: 'How do you organize marketing, e‑com, and CRM organizations for 2026–2027 and beyond?',
+      question: 'How should a marketing organization be structured for 2026–2027 and beyond?',
       answer: `Collaboration, transparency, courage, and creativity will matter even more. I have also become obsessed with silos, why they hurt efficiency and why they risk getting worse as AI agents enter the mix.
 
 Let me step back for a moment before I dig in.
@@ -186,7 +186,7 @@ Think in three levels:
     id: 'silos-effektivitet-marketing',
     categories: ['organization', 'ai-agenter'],
     sv: {
-      question: 'Hur märker man att silos skadar effektiviteten i marketing (2026+)?',
+      question: 'Hur märker man att man har problem med silos på bolaget?',
       answer: `Silos handlar sällan om att folk är specialister. Det handlar om att ansvar och insyn går sönder mellan saker som egentligen hänger ihop. Ett tidigt tecken är hög aktivitet men låg synk, många parallella initiativ, mycket Slack, många möten, men ändå upplevs allt som handpåläggning och brandkårsutryckningar.
 
 Ett annat tecken är att samma frågor upprepas i flera rum och att beslut tas i semi‑stängda kontexter, till exempel byrå och en intern funktion, utan att andra berörda förstår varför. Då blir organisationen långsam samtidigt som kommunikationen exploderar.
@@ -194,7 +194,7 @@ Ett annat tecken är att samma frågor upprepas i flera rum och att beslut tas i
 Med AI‑agenter blir detta extra tydligt. Om det inte finns överblick över vilka agenter som finns, vad de gör och hur de påverkar produktivitet och kvalitet skapas nya silos ovanpå de gamla. Det är tidigt i utvecklingen, men just därför behöver överblicken byggas innan det blir permanent.`,
     },
     en: {
-      question: 'How do you notice that silos are hurting marketing efficiency (2026+)?',
+      question: 'How do you notice you have silo problems in the company?',
       answer: `Silos are rarely about specialization. They happen when accountability and visibility break between things that actually belong together. An early sign is high activity but low synchronization, many parallel initiatives, lots of Slack, many meetings, yet everything still feels like firefighting.
 
 Another sign is that the same questions repeat in multiple rooms and decisions are made in semi‑closed contexts, for example an agency plus one internal function, without other stakeholders understanding why. The organization slows down while communication explodes.
@@ -206,7 +206,7 @@ With AI agents this becomes even clearer. If there is no overview of which agent
     id: 'silos-skadliga-marketing-ecom-crm',
     categories: ['organization'],
     sv: {
-      question: 'Vilka silos är mest skadliga mellan marketing, e‑com och CRM?',
+      question: 'Vilka silos är de mest problematiska inom marketing, e‑com och CRM?',
       answer: `De mest skadliga silosarna ligger där ett team påverkar ett annat teams utfall utan att dela mål, data eller beslutskriterier. Tre återkommande exempel:
 
 - **CRM mot acquisition.** När acquisition hittar nya och CRM bearbetar befintliga som separata maskiner tappar man effekt. I en agentifierad kundresa blir gränsen mellan ny och lojal mindre svartvit och optimering behöver ske som ett system.
@@ -214,7 +214,7 @@ With AI agents this becomes even clearer. If there is no overview of which agent
 - **E‑com, ops och policies mot marketing.** När leveranslöften, returer, lager, prislogik och kundlöften inte hänger ihop med det marketing kommunicerar skapas missmatch och tapp i konvertering. Ofta försöker man lösa det med mer kommunikation istället för att fixa grundorsaken.`,
     },
     en: {
-      question: 'Which silos are most harmful between marketing, e‑com, and CRM?',
+      question: 'Which silos are most problematic within marketing, e‑com, and CRM?',
       answer: `The most harmful silos are where one team affects another team’s outcomes without shared goals, data, or decision criteria. Three recurring examples:
 
 - **CRM versus acquisition.** When acquisition finds new and CRM nurtures existing as separate machines, you lose impact. In an agentified journey the line between new and loyal is less black and white, and optimization must happen as one system.
@@ -226,7 +226,7 @@ With AI agents this becomes even clearer. If there is no overview of which agent
     id: 'minska-handoffs-friktion',
     categories: ['organization', 'tech', 'measurement'],
     sv: {
-      question: 'Hur minskar man handoffs och intern friktion utan att göra alla till generalister?',
+      question: 'Hur minskar man interna överlämningar och friktion utan att göra alla till generalister?',
       answer: `Målet är inte att alla ska kunna allt. Målet är att färre saker ska studsa mellan funktioner. Det kräver tre byggstenar:
 
 - **Tydligt ägarskap för utfall.** Någon äger inte bara en kanal, utan en effekt, till exempel activation, winback eller reviews till conversion.
@@ -250,7 +250,7 @@ With AI agents, process design becomes even more important. If the agent does it
     id: 'gemensamma-mal-marketing-ecom-crm',
     categories: ['organization', 'tech'],
     sv: {
-      question: 'Hur bygger man gemensamma mål mellan marketing, e‑com och CRM utan fluff?',
+      question: 'Hur sätter man och bryter ner gemensamma mål?',
       answer: `Gemensamma mål måste vara kopplade till affärsutfall och ha en gemensam mätprincip. Ett fungerande upplägg är att separera:
 
 - **North Star.** Till exempel lönsam tillväxt.
@@ -260,7 +260,7 @@ With AI agents, process design becomes even more important. If the agent does it
 Det viktiga är att undvika att varje funktion väljer sina favoritmått. Om brand, performance och CRM tittar på olika sanningar kommer organisationen alltid prata förbi varandra. Därför behöver man också bestämma hur utvärdering ska ske, till exempel incrementality, MMM eller test, så att optimeringen inte fastnar i enkel attribution när beslutsvägarna blir mer diffusa.`,
     },
     en: {
-      question: 'How do you build shared goals across marketing, e‑com, and CRM without fluff?',
+      question: 'How do you set and break down shared goals?',
       answer: `Shared goals must be tied to business outcomes and built on a shared measurement principle. A workable setup separates:
 
 - **North Star.** For example profitable growth.
@@ -274,7 +274,7 @@ The key is to avoid each function choosing its own favorite metrics. If brand, p
     id: 'centralt-vs-team-ai-agenter',
     categories: ['organization', 'ai-agenter'],
     sv: {
-      question: 'Vad ska ligga centralt och vad kan ligga ute i teamen när AI‑agenter ökar?',
+      question: 'Vad bör ligga centralt och vad kan ligga i teamen när AI‑agenter blir fler?',
       answer: `När AI‑agenter införs är det extra viktigt att skilja på ramverk och exekvering.
 
 **Centralt bör ligga:**
@@ -316,7 +316,7 @@ If everything is decentralized the result is POC spaghetti, many agents and tool
     id: 'undvik-spretiga-ai-initiativ',
     categories: ['ai-agenter', 'organization'],
     sv: {
-      question: 'Hur undviker man att AI‑initiativ i marketing blir spretiga?',
+      question: 'Hur undviker man att marknadsavdelningens AI‑initiativ blir allt för spretiga?',
       answer: `Spret uppstår när varje initiativ har egen data, egna verktyg, egna KPI:er och ingen gemensam uppföljning. Det ser ut som innovation, men det skalar inte.
 
 Tre minimikrav gör stor skillnad:
@@ -328,7 +328,7 @@ Tre minimikrav gör stor skillnad:
 Det är särskilt viktigt när AI employee‑system köps in per funktion från olika providers utan koppling till varandra eller till resten av teamet. Då blir AI ett nytt silo‑lager.`,
     },
     en: {
-      question: 'How do you avoid AI initiatives in marketing becoming fragmented?',
+      question: 'How do you avoid marketing AI initiatives becoming too fragmented?',
       answer: `Fragmentation happens when each initiative has its own data, tools, KPIs, and no shared follow‑up. It looks like innovation, but it does not scale.
 
 Three minimum requirements make a big difference:
@@ -344,7 +344,7 @@ This matters especially when AI employee systems are bought per function from di
     id: 'agent-governance-enkel',
     categories: ['ai-agenter', 'implementering'],
     sv: {
-      question: 'Hur bygger man en enkel agent governance i marketing utan att skapa byråkrati?',
+      question: 'Hur bygger man en agent governance på bolaget och på marketingavdelningen utan att skapa byråkrati?',
       answer: `Agent‑governance kan vara lättviktig men behöver finnas. Tänk trafikregler, inte en policybibel.
 
 En minimal governance innehåller:
@@ -357,7 +357,7 @@ En minimal governance innehåller:
 Utan governance blir det svårt att ta de strategiska beslut som ofta motiverar AI, sänka kostnader, möjliggöra in‑housing och höja kvalitet. Det kräver insikt i vilka agenter som finns och hur de påverkar produktivitet och kvalitet.`,
     },
     en: {
-      question: 'How do you build a lightweight agent governance in marketing without bureaucracy?',
+      question: 'How do you build agent governance at the company and in marketing without bureaucracy?',
       answer: `Agent governance can be lightweight but it must exist. Think traffic rules, not a policy bible.
 
 A minimal governance includes:
@@ -374,7 +374,7 @@ Without governance it is hard to make the strategic decisions that often justify
     id: 'mappa-manskliga-ai-tasks',
     categories: ['ai-agenter', 'organization'],
     sv: {
-      question: 'Hur mappar man mänskliga tasks vs AI‑tasks i marketing på ett realistiskt sätt?',
+      question: 'Hur mappar man mänskliga tasks vs AI‑tasks?',
       answer: `Att mappa tasks handlar om att skydda kvalitet och minska risk, samtidigt som repetitivt jobb kan skalas. En praktisk modell är tre nivåer:
 
 - **Expertläge.** Svåra beslut, stora pengar, hög risk, till exempel budgetallokering, claims, varumärkesrisk och prissättning.
@@ -384,7 +384,7 @@ Without governance it is hard to make the strategic decisions that often justify
 Många missar att agentifiering är processdesign. Om man bara lägger en agent på ett steg utan att ändra ansvar, kontrollpunkter och mätning blir output snabbare men inte nödvändigtvis bättre.`,
     },
     en: {
-      question: 'How do you map human tasks versus AI tasks in marketing in a realistic way?',
+      question: 'How do you map human tasks versus AI tasks?',
       answer: `Mapping tasks is about protecting quality and reducing risk while scaling repetitive work. A practical model has three levels:
 
 - **Expert mode.** Hard decisions, big money, high risk, for example budget allocation, claims, brand risk, and pricing.
@@ -464,13 +464,13 @@ The storefront is still important, but it is no longer the only persuasion surfa
     id: 'modern-funnel-ny-lojal',
     categories: ['agentic-commerce', 'organization'],
     sv: {
-      question: 'Hur ser en modern funnel ut när ny och lojal kund blir mindre svartvit?',
+      question: 'Hur ser en modern kundresa ut när gränsen mellan ny och lojal kund suddas ut?',
       answer: `När agentgränssnitt och externa ytor tar större plats blir kundresan mindre linjär. En ny kund kan ha byggt preferens länge via jämförelser, reviews och proof utan att det syns i traditionell webbanalys. En lojal kund kan återköpa utan att besöka sajt eller öppna mail, eftersom agenten fortsätter välja baserat på trust, leverans, prislogik och returvillkor.
 
 Det gör att CRM och acquisition inte längre kan optimeras var för sig utan effektförlust. Det behövs gemensamma mål, en gemensam kundmodell, prospect och customer i samma vy, och en experimentmotor som spänner över hela kedjan snarare än att ägas av en kanal.`,
     },
     en: {
-      question: 'What does a modern funnel look like when “new” and “loyal” are less black and white?',
+      question: 'What does a modern journey look like when the line between new and loyal fades?',
       answer: `When agent interfaces and external surfaces take more space, the journey becomes less linear. A new customer may build preference through comparisons, reviews, and proof long before the first purchase appears in your analytics. A loyal customer can repurchase without visiting your site or opening email because the agent keeps choosing you based on trust, delivery, price logic, and return terms.
 
 That means CRM and acquisition can no longer be optimized separately without losing effect. You need shared goals, a shared customer model, prospect and customer in the same view, and an experiment engine that spans the whole chain rather than being owned by one channel.`,
@@ -500,7 +500,7 @@ A good rule of thumb: if the team cannot agree on which numbers are correct, or 
     id: 'source-of-truth-spend-effekt',
     categories: ['tech', 'organization'],
     sv: {
-      question: 'Hur bygger man en gemensam source of truth för spend och effekt utan Excel‑krig?',
+      question: 'Hur bygger man en gemensam source of truth för spend och effekt?',
       answer: `En source of truth är lika mycket disciplin som system. Den behöver:
 
 - Gemensamma definitioner, vad räknas som spend, conversion, intäkt och marginal
@@ -512,7 +512,7 @@ Många tror att en dashboard automatiskt löser problemet. Men utan operational 
 I en agentifierad värld blir detta ännu viktigare eftersom fler beslut tas snabbare. Då behöver grunden vara stabil så att snabbheten inte bara blir snabbare fel.`,
     },
     en: {
-      question: 'How do you build a shared source of truth for spend and effect without Excel wars?',
+      question: 'How do you build a shared source of truth for spend and effect?',
       answer: `A source of truth is as much discipline as system. It needs:
 
 - Shared definitions, what counts as spend, conversion, revenue, and margin
@@ -528,7 +528,7 @@ In an agentified world this becomes even more important because more decisions h
     id: 'integrationer-agentbaserade',
     categories: ['tech', 'ai-agenter'],
     sv: {
-      question: 'Vilka integrationer ger mest hävstång när fler processer blir agentbaserade?',
+      question: 'Vilka integrationer ger mest effekt när fler processer blir agentbaserade?',
       answer: `Hävstång kommer från integrationer som minskar handpåläggning och ökar spårbarhet. Typiskt:
 
 - CRM till annonsplattformar, audiences, exclusions och feedback‑loop
@@ -539,7 +539,7 @@ In an agentified world this becomes even more important because more decisions h
 Det som ofta missas är allt runt omkring. Approvals, budgetregler, brand‑constraints och kvalitetskontroller. En agent som kan göra ads men inte passar in i beslutskedjan skapar mer friktion än värde.`,
     },
     en: {
-      question: 'Which integrations create the most leverage as more processes become agent‑based?',
+      question: 'Which integrations create the most impact as more processes become agent‑based?',
       answer: `Leverage comes from integrations that reduce manual work and increase traceability. Typical examples:
 
 - CRM to ad platforms, audiences, exclusions, feedback loops
@@ -574,7 +574,7 @@ The core point is simple. Agents are not the stack. They need a stack that works
     id: 'leja-ut-kanal-nar',
     categories: ['byraer', 'organization'],
     sv: {
-      question: 'När fungerar det att leja ut en kanal, och när blir det en dålig idé?',
+      question: 'När fungerar det att leja ut en operations av en kanal till en byrå, och när fungerar det inte',
       answer: `Det fungerar när intern organisation har ägarskap över mål, mätning och strategi, och byrån främst är exekveringsmotor. Det fungerar sämre när kanalen i praktiken är kärnan i tillväxten och intern systemförståelse saknas. Då skapas beroende och mer kommunikation, inte mindre.
 
 Med AI ökar risken. Output kan komma snabbare, men om intern datadisciplin och beslutskriterier saknas blir byrån lätt en extern silo. Mycket tid går åt till att svara på frågor som bottnar i bristande överblick, snarare än att jobba strategiskt.
@@ -582,7 +582,7 @@ Med AI ökar risken. Output kan komma snabbare, men om intern datadisciplin och 
 Ett bättre angreppssätt är att köpa in förmågor och profiler som kan jobba tvärfunktionellt, measurement, experimentdesign, creative systems, instrumentering och kvalitetsstyrning.`,
     },
     en: {
-      question: 'When does it make sense to outsource a channel, and when is it a bad idea?',
+      question: 'When does it make sense to outsource channel operations to an agency, and when does it not work?',
       answer: `It works when the internal organization owns goals, measurement, and strategy, and the agency is mainly an execution engine. It works poorly when the channel is effectively the core of growth and internal system understanding is missing. Then you create dependency and more communication, not less.
 
 With AI the risk increases. Output can be faster, but without internal data discipline and decision criteria the agency becomes an external silo. A lot of time goes to answering questions rooted in lack of overview rather than doing strategic work.
@@ -594,7 +594,7 @@ A better approach is to buy capabilities and profiles that can work cross‑func
     id: 'byra-samarbete-minska-kommunikation',
     categories: ['byraer', 'organization'],
     sv: {
-      question: 'Hur ska samarbetet med byråer se ut för att minska kommunikation som suger tid?',
+      question: 'Vad ska man tänka på i byråsamarbeten framåt?',
       answer: `Kommunikation är kritiskt, men problemet är när den blir ett substitut för struktur. Med ökad specialisering ökar både komplexitet och frekvens på frågor. När kranarna är öppna, Slack och direktaccess, kan informationsflödet bli enormt och beslut tas i informella rum. Det förstärker silos både internt och mellan bolag och byrå.
 
 Det som minskar brus är en tydlig samarbetsmodell:
@@ -607,7 +607,7 @@ Det som minskar brus är en tydlig samarbetsmodell:
 Dashboards kan hjälpa, men löser inte grundproblemet om parter ändå tittar på olika mått och har olika sanningar i huvudet. Struktur gör att kommunikationen flyttar från konstant kran av frågor till strategiska diskussioner och beslutsmöten.`,
     },
     en: {
-      question: 'What should agency collaboration look like to reduce time‑draining communication?',
+      question: 'What should you consider in agency collaborations going forward?',
       answer: `Communication is critical, but the problem is when it substitutes for structure. With more specialization, complexity and question volume increase. When the pipes are open, Slack and direct access, information flow becomes huge and decisions happen in informal rooms. That strengthens silos both internally and between company and agency.
 
 What reduces noise is a clear collaboration model:
@@ -624,7 +624,7 @@ Dashboards can help, but they do not solve the root problem if parties still loo
     id: 'externa-profiler-2026',
     categories: ['byraer', 'kompetens'],
     sv: {
-      question: 'Vilka externa profiler är mest värdefulla att köpa in 2026+?',
+      question: 'Vilka externa profiler och eller byråer ska man leta efter 2026 och framåt?',
       answer: `Värdet ligger sällan i någon som kan en kanal. Värdet ligger i förmågor som skapar hävstång och ordning:
 
 - Measurement, attribution, MMM och experimentdesign
@@ -635,7 +635,7 @@ Dashboards can help, but they do not solve the root problem if parties still loo
 Viktigt är att externa resurser kan jobba i organisationens verkliga processer, inte bara leverera output från sidan. Annars byggs en extern silo och kommunikationen ökar.`,
     },
     en: {
-      question: 'Which external profiles are most valuable to bring in for 2026+?',
+      question: 'Which external profiles and or agencies should you look for in 2026 and beyond?',
       answer: `The value rarely lies in someone who knows a single channel. The value lies in capabilities that create leverage and order:
 
 - Measurement, attribution, MMM, and experiment design
@@ -650,13 +650,13 @@ What matters is that external resources can work inside the organization’s rea
     id: 'byraer-viktigast-behalla',
     categories: ['byraer'],
     sv: {
-      question: 'Vilka byråer är viktigast att behålla när AI blir standard?',
+      question: 'Vilka byråer blir viktigast att samarbeta med 2026 och framåt?',
       answer: `De viktigaste byråerna är de som bidrar med metod, transparens och kvalitetsdisciplin, inte bara output. När alla kan producera mer med AI blir det runt omkring som avgör, erfarenhet, kritisk förmåga mot plattformar och förmåga att jobba mot gemensamma mål och gemensam mätning.
 
 Byråer som är AI‑first kan ha fördel i tempo, men tempo utan struktur riskerar att skapa spretig datadisciplin och fler silos. Bra byråer hjälper organisationen att få överblick, minska brus och fatta bättre beslut.`,
     },
     en: {
-      question: 'Which agencies are most important to keep when AI becomes standard?',
+      question: 'Which agencies become most important to work with in 2026 and beyond?',
       answer: `The most important agencies are those that bring method, transparency, and quality discipline, not just output. When everyone can produce more with AI, what matters is the surrounding craft, experience, critical ability toward platforms, and the ability to work against shared goals and shared measurement.
 
 AI‑first agencies may have speed advantages, but speed without structure risks messy data discipline and more silos. Good agencies help the organization gain overview, reduce noise, and make better decisions.`,
@@ -774,7 +774,7 @@ As attribution weakens, geo tests become a robust way to build decision confiden
     id: 'roller-viktigare-ai',
     categories: ['kompetens', 'ai-agenter'],
     sv: {
-      question: 'Vilka roller blir viktigare i marketing när AI‑agenter tar mer repetitivt jobb?',
+      question: 'Vilka roller ökar i betydelse när AI tar över mer av det repetitiva jobbet?',
       answer: `Två profiler blir extra värdefulla:
 
 - **Rätt typ av generalist och projektledare.** Hands‑on, strukturerad, affärsförstående och bra på att koordinera mellan in‑house, byråer, agenter och tech vendors. Behovet av processdesign och koordination ökar när agentlandskapet växer.
@@ -783,7 +783,7 @@ As attribution weakens, geo tests become a robust way to build decision confiden
 Samarbetet mellan dessa är ofta avgörande. Prototyparen testar och formar, projektledaren driver igenom, skapar uthållighet och ser till att det faktiskt blir gjort.`,
     },
     en: {
-      question: 'Which roles become more important as AI agents take more repetitive work?',
+      question: 'Which roles grow in importance as AI takes over more repetitive work?',
       answer: `Two profiles become extra valuable:
 
 - **The right kind of generalist and project lead.** Hands‑on, structured, business‑savvy, and good at coordinating between in‑house, agencies, agents, and tech vendors. The need for process design and coordination grows as the agent landscape grows.
