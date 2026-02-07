@@ -133,7 +133,7 @@ Today I'm an angel investor, advisor, and independent consultant. Previously I w
           period: 'Previously',
           role: 'Martech Lead & Digital Transformation Manager',
           company: 'Ving/Thomas Cook',
-          text: 'Led in‑house martech and transformation in a complex, international organization.',
+          text: 'Led in‑house martech and transformation in a complex, international organisation.',
         },
         {
           period: 'Previously',

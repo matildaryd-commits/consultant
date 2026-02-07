@@ -36,7 +36,7 @@ const content = {
     },
     now: {
       title: 'Now',
-      building: { label: 'Focus', value: 'How organizations coordinate AI agents, agencies, and in‑house' },
+      building: { label: 'Focus', value: 'How organisations coordinate AI agents, agencies, and in‑house' },
       thinking: { label: 'Thinking about', value: 'Agentic commerce and what it means for marketing' },
       reading: { label: 'Reading', value: 'GTM engineering' },
     },

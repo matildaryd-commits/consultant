@@ -22,7 +22,7 @@ const content = {
   },
   en: {
     title: 'Contact',
-    intro: `I welcome conversations with CMOs and leadership teams about AI‑driven marketing and data organizations. This covers strategy, operating model, or technology. Send an email or find me on LinkedIn.`,
+    intro: `I welcome conversations with CMOs and leadership teams about AI‑driven marketing and data organisations. This covers strategy, operating model, or technology. Send an email or find me on LinkedIn.`,
     email: {
       label: 'Email',
       value: 'matilda@rydow.com',
