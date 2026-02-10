@@ -8,7 +8,7 @@ import { applyPageMeta, setHreflangLinks } from '../utils/seo'
 const content = {
   sv: {
     title: 'Tack!',
-    intro: 'Meddelandet är skickat. Jag återkommer så snart jag kan.',
+    intro: 'Kul att du hör av dig! Jag hör av mig inom kort.',
     back: 'Tillbaka till kontakt',
   },
   en: {
