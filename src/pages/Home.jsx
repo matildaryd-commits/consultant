@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useEffect } from 'react'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 import { faqs } from '../data/faq'
+import { applyPageMeta, setHreflangLinks } from '../utils/seo'
 
 const content = {
   sv: {
@@ -58,6 +60,37 @@ export default function Home() {
   const { lang } = useLanguage()
   const t = content[lang]
   const featuredFaqs = faqs.filter(faq => featuredFaqIds.includes(faq.id))
+  const faqById = Object.fromEntries(faqs.map(faq => [faq.id, faq]))
+  const nowLinks = [
+    { label: t.now.building.label, id: 'organisera-marknadsavdelning' },
+    { label: t.now.thinking.label, id: 'agentic-commerce-vad-ar' },
+    { label: t.now.reading.label, id: 'undvik-spretiga-ai-initiativ' },
+  ]
+
+  useEffect(() => {
+    const origin = 'https://matildarydow.com'
+    const basePath = lang === 'sv' ? '/sv' : '/en'
+    const description = lang === 'sv'
+      ? 'Rådgivare inom martech, data/analytics och AI. Hjälper CMO:er och ledningsgrupper med strategi, operating model och teknik.'
+      : 'Advisor in martech, data/analytics, and AI. Helping CMOs and leadership teams with strategy, operating model, and technology.'
+
+    document.documentElement.lang = lang
+    applyPageMeta({
+      title: lang === 'sv' ? 'Matilda Rydow — AI‑rådgivning för marketing och data' : 'Matilda Rydow — AI advisor for marketing and data',
+      description,
+      ogTitle: lang === 'sv' ? 'Matilda Rydow — AI‑rådgivare' : 'Matilda Rydow — AI advisor',
+      ogDescription: description,
+      ogImage: `${origin}/matilda-portrait.jpg`,
+      locale: lang === 'sv' ? 'sv_SE' : 'en_US',
+      canonical: `${origin}${basePath}/`,
+    })
+
+    setHreflangLinks([
+      { lang: 'sv', href: `${origin}/sv/` },
+      { lang: 'en', href: `${origin}/en/` },
+      { lang: 'x-default', href: `${origin}/sv/` },
+    ])
+  }, [lang])
 
   return (
     <>
@@ -85,7 +118,7 @@ export default function Home() {
                 {t.links.linkedin}
                 <ArrowUpRight size={14} />
               </a>
-              <Link to="/fragor">
+              <Link to={`/${lang}/fragor`}>
                 {t.links.faq}
                 <ArrowRight size={14} />
               </Link>
@@ -102,30 +135,19 @@ export default function Home() {
         <div className="container">
           <div className="label mb-8">{t.now.title}</div>
           <div className="now-grid">
-            <div className="now-item">
-              <div className="now-item__label">{t.now.building.label}</div>
-              <div className="now-item__value">
-                <Link to="/fragor#organisera-marknadsavdelning">
-                  {t.now.building.value} <ArrowUpRight size={12} />
-                </Link>
-              </div>
-            </div>
-            <div className="now-item">
-              <div className="now-item__label">{t.now.thinking.label}</div>
-              <div className="now-item__value">
-                <Link to="/fragor#agentic-commerce-vad-ar">
-                  {t.now.thinking.value} <ArrowUpRight size={12} />
-                </Link>
-              </div>
-            </div>
-            <div className="now-item">
-              <div className="now-item__label">{t.now.reading.label}</div>
-              <div className="now-item__value">
-                <Link to="/fragor#undvik-spretiga-ai-initiativ">
-                  {t.now.reading.value} <ArrowUpRight size={12} />
-                </Link>
-              </div>
-            </div>
+            {nowLinks.map(item => {
+              const question = faqById[item.id]?.[lang]?.question
+              return (
+                <div className="now-item" key={item.id}>
+                  <div className="now-item__label">{item.label}</div>
+                  <div className="now-item__value">
+                    <Link to={`/${lang}/fragor#${item.id}`}>
+                      {question} <ArrowUpRight size={12} />
+                    </Link>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
@@ -134,7 +156,7 @@ export default function Home() {
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 'var(--space-8)' }}>
             <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 0 }}>{t.faq.title}</h2>
-            <Link to="/fragor" className="btn btn--ghost">
+            <Link to={`/${lang}/fragor`} className="btn btn--ghost">
               {t.faq.viewAll} <ArrowRight size={14} />
             </Link>
           </div>
@@ -151,7 +173,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <Link to={`/fragor#${faq.id}`}>
+                  <Link to={`/${lang}/fragor#${faq.id}`}>
                     <h3 className="writing-item__title">
                       {localized.question}
                     </h3>

@@ -19,6 +19,7 @@ const navItems = {
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { lang, toggleLang } = useLanguage()
+  const basePath = `/${lang}`
 
   const items = navItems[lang]
 
@@ -26,7 +27,7 @@ export default function Header() {
     <>
       <header className="header">
         <div className="header__inner">
-          <Link to="/" className="header__name">
+          <Link to={basePath} className="header__name">
             Matilda Rydow
           </Link>
 
@@ -34,7 +35,7 @@ export default function Header() {
             {items.map((item) => (
               <NavLink
                 key={item.path}
-                to={item.path}
+                to={`${basePath}${item.path}`}
                 className={({ isActive }) => (isActive ? 'active' : '')}
               >
                 {item.label}
@@ -59,7 +60,7 @@ export default function Header() {
         {items.map((item) => (
           <NavLink
             key={item.path}
-            to={item.path}
+            to={`${basePath}${item.path}`}
             onClick={() => setMobileOpen(false)}
           >
             {item.label}

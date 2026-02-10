@@ -1,47 +1,107 @@
 import { motion } from 'framer-motion'
-import { Mail, Linkedin, ArrowUpRight } from 'lucide-react'
+import { Linkedin, ArrowUpRight } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../hooks/useLanguage'
+import { applyPageMeta, setHreflangLinks } from '../utils/seo'
 
 const content = {
   sv: {
-    title: 'Kontakt',
-    intro: `Jag tar gärna dialoger med CMO:er och ledningsgrupper om AI‑drivna marketing‑ och dataorganisationer. Det gäller strategi, operating model eller teknik. Skicka ett mail eller hitta mig på LinkedIn.`,
-    email: {
-      label: 'E-post',
-      value: 'matilda@rydow.com',
-      note: 'Jag försöker svara inom ett par dagar.',
+    title: 'Hör gärna av dig!',
+    intro: `Oavsett om du har ett konkret behov inom martech, AI, data/analytics, marketing operating model - eller bara tycker ämnet är intressant och vill ta ett första samtal så skriv gärna en rad, så hör jag av mig.`,
+    form: {
+      heading: '',
+      name: 'Namn',
+      email: 'E‑post',
+      message: 'Meddelande',
+      submit: 'Skicka',
     },
     linkedin: {
       label: 'LinkedIn',
-      value: 'Följ eller skriv ett meddelande',
+      value: 'Säg gärna hej på LinkedIn!',
     },
-    coffee: {
-      title: 'Kaffe?',
-      text: 'Jag är baserad i Stockholm. Om du vill träffas och prata, föreslå en tid.',
-    },
+    or: 'eller',
   },
   en: {
     title: 'Contact',
-    intro: `I welcome conversations with CMOs and leadership teams about AI‑driven marketing and data organisations. This covers strategy, operating model, or technology. Send an email or find me on LinkedIn.`,
-    email: {
-      label: 'Email',
-      value: 'matilda@rydow.com',
-      note: 'I try to respond within a couple of days.',
+    intro: `Whether you have a concrete need within martech, AI, data/analytics, or marketing operating model — or simply find the topic interesting and want an initial conversation — feel free to drop a note and I’ll get back to you.`,
+    form: {
+      heading: '',
+      name: 'Name',
+      email: 'Email',
+      message: 'Message',
+      submit: 'Send',
     },
     linkedin: {
       label: 'LinkedIn',
       value: 'Follow or send a message',
     },
-    coffee: {
-      title: 'Coffee?',
-      text: "I'm based in Stockholm. If you want to meet up and chat, suggest a time.",
-    },
+    or: 'or',
   },
 }
 
 export default function Contact() {
   const { lang } = useLanguage()
   const t = content[lang]
+  const navigate = useNavigate()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
+
+  useEffect(() => {
+    const origin = 'https://matildarydow.com'
+    const basePath = lang === 'sv' ? '/sv' : '/en'
+    const description = lang === 'sv'
+      ? 'Kontakta Matilda Rydow för samtal om martech, data/analytics och AI.'
+      : 'Contact Matilda Rydow to discuss martech, data/analytics, and AI.'
+
+    document.documentElement.lang = lang
+    applyPageMeta({
+      title: lang === 'sv' ? 'Kontakt — Matilda Rydow' : 'Contact — Matilda Rydow',
+      description,
+      ogTitle: lang === 'sv' ? 'Kontakt' : 'Contact',
+      ogDescription: description,
+      ogImage: `${origin}/matilda-portrait.jpg`,
+      locale: lang === 'sv' ? 'sv_SE' : 'en_US',
+      canonical: `${origin}${basePath}/kontakt`,
+    })
+
+    setHreflangLinks([
+      { lang: 'sv', href: `${origin}/sv/kontakt` },
+      { lang: 'en', href: `${origin}/en/kontakt` },
+      { lang: 'x-default', href: `${origin}/sv/kontakt` },
+    ])
+  }, [lang])
+
+  async function handleSubmit(event) {
+    event.preventDefault()
+    if (isSubmitting) return
+
+    setIsSubmitting(true)
+    setSubmitError('')
+
+    try {
+      const formData = new FormData(event.currentTarget)
+      const response = await fetch('https://formspree.io/f/xjgekolz', {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      })
+
+      if (!response.ok) {
+        throw new Error('Form submit failed')
+      }
+
+      navigate(`/${lang}/kontakt/tack`)
+    } catch (error) {
+      setSubmitError(
+        lang === 'sv'
+          ? 'Det gick inte att skicka. Försök igen om en stund.'
+          : 'Could not send. Please try again in a moment.'
+      )
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <section className="section">
@@ -51,7 +111,7 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="mb-8">{t.title}</h1>
+          <h1 className="contact-title">{t.title}</h1>
           <p className="contact-intro">{t.intro}</p>
         </motion.div>
 
@@ -61,61 +121,78 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <a
-            href={`mailto:${t.email.value}`}
-            className="contact-method"
-            style={{ textDecoration: 'none' }}
-          >
-            <Mail className="contact-method__icon" size={24} />
-            <div>
-              <div className="contact-method__label">{t.email.label}</div>
-              <div className="contact-method__value">{t.email.value}</div>
-              <p style={{
-                fontSize: 'var(--text-sm)',
-                color: 'var(--text-muted)',
-                marginTop: 'var(--space-2)',
-                marginBottom: 0,
-              }}>
-                {t.email.note}
-              </p>
-            </div>
-          </a>
+          <div className="contact-method contact-method--form">
+            {t.form.heading ? (
+              <div className="contact-form__heading">{t.form.heading}</div>
+            ) : null}
+            <form
+              onSubmit={handleSubmit}
+              className="contact-form"
+            >
+              <label className="contact-form__field">
+                <span className="contact-form__label">{t.form.name}</span>
+                <input
+                  className="contact-form__input"
+                  type="text"
+                  name="name"
+                  autoComplete="name"
+                  required
+                />
+              </label>
+
+              <label className="contact-form__field">
+                <span className="contact-form__label">{t.form.email}</span>
+                <input
+                  className="contact-form__input"
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                  required
+                />
+              </label>
+
+              <label className="contact-form__field">
+                <span className="contact-form__label">{t.form.message}</span>
+                <textarea
+                  className="contact-form__input contact-form__textarea"
+                  name="message"
+                  rows={5}
+                  required
+                />
+              </label>
+
+              <div className="contact-form__actions">
+                <button type="submit" className="contact-form__submit" disabled={isSubmitting}>
+                  {isSubmitting ? (lang === 'sv' ? 'Skickar…' : 'Sending…') : t.form.submit}
+                </button>
+                {submitError ? (
+                  <span className="contact-form__error">{submitError}</span>
+                ) : null}
+              </div>
+            </form>
+          </div>
+
+          <div className="contact-divider">
+            <span>{t.or}</span>
+          </div>
 
           <a
             href="https://www.linkedin.com/in/matilda-rydow-13057161/"
             target="_blank"
             rel="noopener noreferrer"
-            className="contact-method"
-            style={{ textDecoration: 'none' }}
+            className="contact-method contact-method--link"
           >
-            <Linkedin className="contact-method__icon" size={24} />
+            <Linkedin className="contact-method__icon" size={22} />
             <div>
               <div className="contact-method__label">{t.linkedin.label}</div>
-              <div className="contact-method__value" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+              <div className="contact-method__value contact-method__value--inline">
                 {t.linkedin.value}
-                <ArrowUpRight size={16} />
+                <ArrowUpRight className="contact-method__link-icon" size={14} />
               </div>
             </div>
           </a>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          style={{
-            marginTop: 'var(--space-16)',
-            padding: 'var(--space-8)',
-            background: 'var(--bg-code)',
-            borderRadius: 'var(--radius-md)',
-            borderLeft: '3px solid var(--accent)',
-          }}
-        >
-          <div className="label mb-4">{t.coffee.title}</div>
-          <p style={{ marginBottom: 0, color: 'var(--text-secondary)' }}>
-            {t.coffee.text}
-          </p>
-        </motion.div>
       </div>
     </section>
   )

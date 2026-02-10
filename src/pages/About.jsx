@@ -1,55 +1,19 @@
 import { motion } from 'framer-motion'
+import { useEffect } from 'react'
 import { ArrowUpRight, Play, Mic, FileText } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
+import { applyPageMeta, setHreflangLinks } from '../utils/seo'
+import { generatePersonSchema } from '../data/faq'
 
 const content = {
   sv: {
-    title: 'Om mig',
+    title: 'Hej, jag heter Matilda',
+    subtitle: 'Rådgivare inom martech, data/analytics och AI – med fokus på både tech och organisation.',
     portraitAlt: 'Porträtt av Matilda Rydow',
-    intro: `Min expertis är <strong>martech, data & analytics och AI</strong>. Jag hjälper in-house team bygga en framtidssäkrad operational model, där teamet jobbar sida vid sida med AI-agenter, byråer och martech-stacken.
+    intro: `Jag jobbar med <strong>martech, data/analytics och AI</strong>. Jag hjälper team att bygga lösningar och arbetssätt som gör att data och AI faktiskt används: från <strong>mätning, datamodeller och arkitektur</strong> till <strong>produktbeslut, prioriteringar</strong> och hur <strong>AI‑agenter</strong> vävs in i flöden, ansvar och verktyg. Men tech är sällan hela svaret. Jag lägger lika mycket vikt vid det organisatoriska: <strong>tydliga roller, bra beslutsfattande</strong>, rimliga processer och samarbete som håller över tid. När tech och organisation drar åt samma håll händer det saker – och det är där jag brukar göra störst skillnad.
 
-Idag är jag ängelinvesterare, rådgivare och independent consultant. Tidigare har jag varit Group COO och VD på Precis, CPO & Partner Sponsor på Alvie by Precis, CPO och Co-founder på Wilgot, samt Martech Lead & Digital Transformation Manager på Ving/Thomas Cook.`,
-    chapters: {
-      title: 'Bakgrund',
-      items: [
-        {
-          period: 'Nu',
-          role: 'Ängelinvesterare, Rådgivare och Independent Consultant',
-          company: '',
-          text: 'Stöttar CMO:er och ledningsgrupper i AI‑transformation och org‑design.',
-        },
-        {
-          period: 'Tidigare',
-          role: 'Group COO och VD',
-          company: 'Precis',
-          text: 'Skalade byrå från 60 till 600+ och arbetade nära ledningsgrupper och CMO:er med data, organisation och execution i en internationell miljö.',
-        },
-        {
-          period: 'Tidigare',
-          role: 'CPO & Partner Sponsor',
-          company: 'Alvie by Precis',
-          text: 'Byggde plattform för attribution och marketing intelligence med fokus på mätbarhet och beslutsstöd.',
-        },
-        {
-          period: 'Tidigare',
-          role: 'CPO och Co-founder',
-          company: 'Wilgot',
-          text: 'Byggde agentic commerce och GEO med fokus på skalbar content‑produktion och distribution.',
-        },
-        {
-          period: 'Tidigare',
-          role: 'Martech Lead & Digital Transformation Manager',
-          company: 'Ving/Thomas Cook',
-          text: 'Drev in‑house martech och transformation i en komplex, internationell organisation.',
-        },
-        {
-          period: 'Tidigare',
-          role: 'Head of Digital Marketing',
-          company: 'Tikkurila (Alcro, Beckers)',
-          text: 'Ledde digital transformation inom marketing i en internationell koncern.',
-        },
-      ],
-    },
+Utöver att hjälpa bolag med martech, data/analytics och AI är jag ängelinvesterare. Tidigare har jag varit Group COO och VD på <strong>Precis</strong>, Martech Lead på Ving/Thomas Cook, och byggt Alvie (<strong>attribution/marketing intelligence</strong>) samt Wilgot (<strong>agentic commerce</strong>/GEO).`,
+    chapters: null,
     interests: {
       title: 'Vad jag tänker på',
       items: [
@@ -57,7 +21,6 @@ Idag är jag ängelinvesterare, rådgivare och independent consultant. Tidigare 
         'Koordination av AI‑agenter',
         'Byråsamarbete i AI‑eran',
         'Agentic commerce och dess påverkan på marketing',
-        'GTM engineering och konvergensen mellan marketing och sales',
       ],
     },
     expertise: {
@@ -66,13 +29,19 @@ Idag är jag ängelinvesterare, rådgivare och independent consultant. Tidigare 
         'E‑handlare',
         'SaaS',
         'B2B',
-        'Consumer',
         'App‑bolag',
       ],
     },
     media: {
       title: 'I media',
       items: [
+        {
+          type: 'podcast',
+          title: 'Så lyckas ni med datadriven marknadsföring',
+          source: 'Erik Modigs podd "Marknadsföring som säljer"',
+          url: 'https://www.youtube.com/watch?v=h7Wz8NOryvI',
+          thumbnail: 'https://img.youtube.com/vi/h7Wz8NOryvI/maxresdefault.jpg',
+        },
         {
           type: 'video',
           title: 'Taking the next step Performance Marketing',
@@ -81,68 +50,29 @@ Idag är jag ängelinvesterare, rådgivare och independent consultant. Tidigare 
           thumbnail: 'https://img.youtube.com/vi/Lswcvjw7Db4/maxresdefault.jpg',
         },
         {
-          type: 'podcast',
-          title: 'Så lyckas ni med datadriven marknadsföring',
-          source: 'Erik Modigs podd "Marknadsföring som säljer"',
-          url: 'https://www.youtube.com/watch?v=h7Wz8NOryvI',
-          thumbnail: 'https://img.youtube.com/vi/h7Wz8NOryvI/maxresdefault.jpg',
+          type: 'article',
+          title: '99 kvinnor som tar marknadsföring och tech till nästa nivå',
+          source: 'Resumé',
+          url: 'https://www.resume.se/marknadsforing/tech/99-kvinnor-som-tar-marknadsforing-och-tech-till-nasta-niva/',
+          thumbnail: '/resume-logo.png',
         },
       ],
     },
     elsewhere: {
       title: 'Mer om mig',
       items: [
-        { label: 'LinkedIn', url: 'https://www.linkedin.com/in/matilda-rydow-13057161/' },
+        { label: 'Säg gärna hej på LinkedIn!', url: 'https://www.linkedin.com/in/matilda-rydow-13057161/' },
       ],
     },
   },
   en: {
-    title: 'About me',
+    title: 'Hi, I’m Matilda',
+    subtitle: 'Advisor in martech, data/analytics, and AI — with a focus on both tech and organization.',
     portraitAlt: 'Portrait of Matilda Rydow',
-    intro: `My expertise is <strong>martech, data & analytics, and AI</strong>. I help in-house teams build a future-proof operational model, where the team works side by side with AI agents, agencies, and the martech stack.
+    intro: `I work with <strong>martech, data/analytics, and AI</strong>. I help teams build solutions and ways of working that make data and AI actually used: from <strong>measurement, data models, and architecture</strong> to <strong>product decisions and priorities</strong>, and how <strong>AI agents</strong> are embedded in flows, ownership, and tools. But tech is rarely the whole answer. I put equal weight on the organizational side: <strong>clear roles and solid decision‑making</strong>, reasonable processes, and collaboration that holds up over time. When tech and organization pull in the same direction, things happen — and that’s where I tend to make the biggest difference.
 
-Today I'm an angel investor, advisor, and independent consultant. Previously I was Group COO and CEO at Precis, CPO & Partner Sponsor at Alvie by Precis, CPO and Co-founder at Wilgot, and Martech Lead & Digital Transformation Manager at Ving/Thomas Cook.`,
-    chapters: {
-      title: 'Background',
-      items: [
-        {
-          period: 'Now',
-          role: 'Angel Investor, Advisor, and Independent Consultant',
-          company: '',
-          text: 'Helping CMOs and leadership teams with AI transformation and org design.',
-        },
-        {
-          period: 'Previously',
-          role: 'Group COO and CEO',
-          company: 'Precis',
-          text: 'Scaled the agency from 60 to 600+ and worked closely with leadership teams and CMOs on data, org design, and execution in an international setup.',
-        },
-        {
-          period: 'Previously',
-          role: 'CPO & Partner Sponsor',
-          company: 'Alvie by Precis',
-          text: 'Built an attribution and marketing intelligence platform focused on measurement and decision support.',
-        },
-        {
-          period: 'Previously',
-          role: 'CPO and Co-founder',
-          company: 'Wilgot',
-          text: 'Built agentic commerce and GEO focused on scalable content production and distribution.',
-        },
-        {
-          period: 'Previously',
-          role: 'Martech Lead & Digital Transformation Manager',
-          company: 'Ving/Thomas Cook',
-          text: 'Led in‑house martech and transformation in a complex, international organisation.',
-        },
-        {
-          period: 'Previously',
-          role: 'Head of Digital Marketing',
-          company: 'Tikkurila (Alcro, Beckers)',
-          text: 'Led digital transformation in marketing within a multi‑country group.',
-        },
-      ],
-    },
+Beyond helping companies with martech, data/analytics, and AI, I’m an angel investor. Previously I was Group COO and CEO at <strong>Precis</strong>, Martech Lead at Ving/Thomas Cook, and built Alvie (<strong>attribution/marketing intelligence</strong>) and Wilgot (<strong>agentic commerce</strong>/GEO).`,
+    chapters: null,
     interests: {
       title: 'What I think about',
       items: [
@@ -150,7 +80,6 @@ Today I'm an angel investor, advisor, and independent consultant. Previously I w
         'Coordination of AI agents',
         'Agency collaboration in the AI era',
         'Agentic commerce and its impact on marketing',
-        'GTM engineering and the convergence of marketing and sales',
       ],
     },
     expertise: {
@@ -159,13 +88,19 @@ Today I'm an angel investor, advisor, and independent consultant. Previously I w
         'E‑commerce',
         'SaaS',
         'B2B',
-        'Consumer',
         'App businesses',
       ],
     },
     media: {
       title: 'In media',
       items: [
+        {
+          type: 'podcast',
+          title: 'How to succeed with data-driven marketing',
+          source: 'Erik Modigs podd "Marknadsföring som säljer"',
+          url: 'https://www.youtube.com/watch?v=h7Wz8NOryvI',
+          thumbnail: 'https://img.youtube.com/vi/h7Wz8NOryvI/maxresdefault.jpg',
+        },
         {
           type: 'video',
           title: 'Taking the next step Performance Marketing',
@@ -174,11 +109,11 @@ Today I'm an angel investor, advisor, and independent consultant. Previously I w
           thumbnail: 'https://img.youtube.com/vi/Lswcvjw7Db4/maxresdefault.jpg',
         },
         {
-          type: 'podcast',
-          title: 'How to succeed with data-driven marketing',
-          source: 'Erik Modigs podd "Marknadsföring som säljer"',
-          url: 'https://www.youtube.com/watch?v=h7Wz8NOryvI',
-          thumbnail: 'https://img.youtube.com/vi/h7Wz8NOryvI/maxresdefault.jpg',
+          type: 'article',
+          title: '99 kvinnor som tar marknadsföring och tech till nästa nivå',
+          source: 'Resumé',
+          url: 'https://www.resume.se/marknadsforing/tech/99-kvinnor-som-tar-marknadsforing-och-tech-till-nasta-niva/',
+          thumbnail: '/resume-logo.png',
         },
       ],
     },
@@ -194,6 +129,39 @@ Today I'm an angel investor, advisor, and independent consultant. Previously I w
 export default function About() {
   const { lang } = useLanguage()
   const t = content[lang]
+  useEffect(() => {
+    const origin = 'https://matildarydow.com'
+    const basePath = lang === 'sv' ? '/sv' : '/en'
+    const description = lang === 'sv'
+      ? 'Rådgivare inom martech, data/analytics och AI. Fokus på både tech och organisation.'
+      : 'Advisor in martech, data/analytics, and AI with a focus on tech and organization.'
+
+    document.documentElement.lang = lang
+    applyPageMeta({
+      title: lang === 'sv' ? 'Hej, jag heter Matilda — Om mig' : 'Hi, I’m Matilda — About',
+      description,
+      ogTitle: lang === 'sv' ? 'Hej, jag heter Matilda' : 'Hi, I’m Matilda',
+      ogDescription: description,
+      ogImage: `${origin}/matilda-portrait.jpg`,
+      locale: lang === 'sv' ? 'sv_SE' : 'en_US',
+      canonical: `${origin}${basePath}/om`,
+    })
+
+    setHreflangLinks([
+      { lang: 'sv', href: `${origin}/sv/om` },
+      { lang: 'en', href: `${origin}/en/om` },
+      { lang: 'x-default', href: `${origin}/sv/om` },
+    ])
+
+    const existing = document.getElementById('person-schema')
+    if (!existing) {
+      const script = document.createElement('script')
+      script.type = 'application/ld+json'
+      script.id = 'person-schema'
+      script.textContent = JSON.stringify(generatePersonSchema())
+      document.head.appendChild(script)
+    }
+  }, [lang])
 
   return (
     <section className="section">
@@ -203,7 +171,10 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="mb-12">{t.title}</h1>
+          <h1 className="mb-8">{t.title}</h1>
+          {t.subtitle ? (
+            <h2 className="about-subtitle">{t.subtitle}</h2>
+          ) : null}
 
           <div className="about-hero">
             <div
@@ -216,32 +187,34 @@ export default function About() {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          <div className="label mb-8">{t.chapters.title}</div>
+        {t.chapters ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="label mb-8">{t.chapters.title}</div>
 
-          {t.chapters.items.map((item, i) => (
-            <motion.div
-              key={item.period}
-              className="career-chapter"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 + i * 0.1 }}
-            >
-              <div className="career-chapter__period">{item.period}</div>
-              <div>
-                <div className="career-chapter__role">{item.role}</div>
-                {item.company && (
-                  <div className="career-chapter__company">{item.company}</div>
-                )}
-                <p className="career-chapter__text">{item.text}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+            {t.chapters.items.map((item, i) => (
+              <motion.div
+                key={item.period}
+                className="career-chapter"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + i * 0.1 }}
+              >
+                <div className="career-chapter__period">{item.period}</div>
+                <div>
+                  <div className="career-chapter__role">{item.role}</div>
+                  {item.company && (
+                    <div className="career-chapter__company">{item.company}</div>
+                  )}
+                  <p className="career-chapter__text">{item.text}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        ) : null}
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -339,7 +312,7 @@ export default function About() {
                   <div className="media-card__thumbnail">
                     <img src={item.thumbnail} alt={item.title} loading="lazy" />
                     <div className="media-card__play">
-                      {item.type === 'podcast' ? <Mic size={20} /> : <Play size={20} />}
+                      {item.type === 'podcast' ? <Mic size={20} /> : item.type === 'video' ? <Play size={20} /> : <FileText size={20} />}
                     </div>
                   </div>
                 ) : (

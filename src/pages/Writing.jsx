@@ -4,26 +4,27 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Link as LinkIcon } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 import { faqs, faqCategories, generateFAQSchema, generatePersonSchema } from '../data/faq'
+import { applyPageMeta, setHreflangLinks } from '../utils/seo'
 
 const content = {
   sv: {
     title: 'Frågor & Svar om AI i Marketing',
     subtitle: 'Perspektiv & Reflektioner',
-    introFull: `Det är en extremt intressant tid just nu.
+    introFull: `Det är en spännande tid just nu, för de flesta bolag och funktioner. Men marketing, CRM och ecom/web har en alldeles speciell utmaning framför sig.
 
-Jag har de senaste tio åren varit ganska insyltad i utvecklingen av digital marknadsföring – och framförallt i den lite nördiga delen: hur bolag blir mer datadrivna, hur man bygger bättre mätning, hur man faktiskt använder sin data smartare (och inte bara samlar den). Det har varit en lång process. Många har kommit långt, men ännu fler är långt ifrån "klara". Transformationen pågår fortfarande, och i många organisationer är den dessutom ojämn: vissa delar är moderna, andra kör på gamla arbetssätt och gamla sanningar.
+Jag har de senaste tio åren varit väldigt insyltad i allt som har med digital marknadsföring att göra. Framförallt den nördiga delen: hur bolag skaffar sig konkurrensfördel genom smart användning av sin data. Det har varit en lång resa för många, och arbetet pågår fortfarande i högsta grad.
 
-Och nu kommer AI in och gör allt… både enklare och svårare.
+Nu kommer AI in och gör allt… både enklare och svårare.
 
-Från ena hållet skapar AI helt nya möjligheter i det dagliga arbetet: mer automation, snabbare produktion, nya sätt att analysera, och på sikt fler AI-agenter som kan ta delar av jobbet. Men den utvecklingen måste någonstans leva sida vid sida med allt det andra som redan pågår: dataprojekt, nya CDP/warehouse-satsningar, mätförbättringar, attribution/MMM, nya processer, nya verktyg, nya byråupplägg. AI är inte en "reset" – den blir ett nytt lager som behöver passa in i verkligheten.
+Från ena hållet skapar AI helt nya möjligheter i det dagliga arbetet: mer automation, snabbare produktion, nya sätt att analysera, och på sikt AI-agenter som kan ta över delar av jobbet. Men den utvecklingen måste någonstans leva sida vid sida med allt det andra som redan pågår: dataprojekt, nya CDP/warehouse-satsningar, mätförbättringar, attribution/MMM, nya processer, nya verktyg, nya byråupplägg. AI är inte en "reset" – den blir ett nytt lager som behöver passa in i verkligheten.
 
-Från andra hållet kommer AI-sök, och inte minst agentic commerce. Det är fenomen som inte bara påverkar kanalmix eller kreativa formats, utan som kan förändra hur bolag opererar i grunden – inom product, revenue och marketing. När discovery, research och ibland köp flyttar till nya gränssnitt och nya beslutsflöden förändras både tratten, mätningen och vad som faktiskt skapar preferens.
+Från andra hållet kommer AI-sök, och inte minst Agentic commerce. Det är ett fenomen som inte bara påverkar kanalmix eller kreativa formats, utan som kan förändra hur bolag opererar i grunden – inom product, revenue och marketing. När discovery, research och ibland köp flyttar till nya gränssnitt och nya beslutsflöden skapas så påverkar det också en marknadsavdelnings operating model.
 
-Det är därför CMO-rollen blir så central i det här skiftet. För förändringen drivs från två håll samtidigt: internt (hur AI förändrar arbetssätt, team, kostnadsstruktur och kvalitet) och externt (hur AI-sök och agentic commerce flyttar kundbeteenden och spelregler). Och "på det" kommer allt det vanliga: transformationsprojekt som redan rullar, pressade budgetar, ökade krav på effekt, och en organisation som ofta är mer siloifierad än man vill erkänna.
+Det är därför CMO-rollen blir så central i det här skiftet. Förändringen drivs från två håll samtidigt: internt (hur AI förändrar arbetssätt, team, kostnadsstruktur och kvalitet) och externt (hur AI-sök och agentic commerce flyttar kundbeteenden och spelregler). Och "på det" kommer allt det vanliga: transformationsprojekt som redan rullar, pressade budgetar, ökade krav på effekt, och en organisation som ofta är mer siloifierad än man vill erkänna.
 
-Det är i den verkligheten jag vill hjälpa och stötta. Jag får mycket frågor från CMO:er och ledningsgrupper, och jag märker att många brottas med samma mönster: enorm potential, men begränsad överblick och en vardag som snabbt blir mer komplex när nya verktyg, nya agenter och nya arbetssätt ska in.
+Det är i den verkligheten jag vill hjälpa och stötta. Jag märker att många brottas med samma mönster: enorm potential, men begränsad överblick och en vardag som snabbt blir mer komplex när nya verktyg, nya agenter och nya arbetssätt ska in.
 
-Så jag samlar mina frågor, svar, reflektioner och spaningar här – så transparent jag kan – för att det här området är för viktigt (och för intressant) för att bara stanna i stängda rum.`,
+Här delar jag löpande frågor & svar, reflektioner och spaningar på ämnet – så transparent jag kan. Det här ämnet är för viktigt, för att bara stanna i stängda rum.`,
     readMore: 'Läs mer',
     readLess: 'Visa mindre',
     author: 'Matilda Rydow',
@@ -37,21 +38,21 @@ Så jag samlar mina frågor, svar, reflektioner och spaningar här – så trans
   en: {
     title: 'Q&A on AI in Marketing',
     subtitle: 'Perspectives & Reflections',
-    introFull: `It's an extremely interesting time right now.
+    introFull: `It’s an exciting time right now for most companies and functions. But marketing, CRM, and e‑com/web have a very particular challenge ahead.
 
-I've spent the last ten years fairly immersed in the development of digital marketing – especially the nerdy part: how companies become more data-driven, how to build better measurement, how to actually use data smarter (and not just collect it). It's been a long process. Many have come far, but even more are far from "done". The transformation is still ongoing, and in many organisations it's uneven: some parts are modern, others run on old workflows and old truths.
+I’ve spent the last ten years deeply involved in digital marketing, especially the nerdy part: how companies build competitive advantage through smart use of data. It has been a long journey for many, and the work is still very much ongoing.
 
-And now AI comes in and makes everything… both easier and harder.
+Now AI enters and makes everything… both easier and harder.
 
-From one direction, AI creates entirely new possibilities in daily work: more automation, faster production, new ways to analyse, and eventually more AI agents that can take parts of the job. But that development must somehow coexist with everything else already happening: data projects, new CDP/warehouse initiatives, measurement improvements, attribution/MMM, new processes, new tools, new agency setups. AI isn't a "reset" – it becomes a new layer that needs to fit into reality.
+From one direction, AI creates entirely new possibilities in daily work: more automation, faster production, new ways to analyse, and eventually AI agents that can take over parts of the job. But that development has to live side by side with everything else already in motion: data projects, new CDP/warehouse initiatives, measurement improvements, attribution/MMM, new processes, new tools, new agency setups. AI is not a “reset” — it’s a new layer that has to fit into reality.
 
-From the other direction comes AI search, and not least agentic commerce. These are phenomena that don't just affect channel mix or creative formats, but can fundamentally change how companies operate – in product, revenue, and marketing. When discovery, research, and sometimes purchases move to new interfaces and new decision flows, both the funnel, the measurement, and what actually creates preference change.
+From the other direction comes AI search, and not least Agentic commerce. It’s a phenomenon that doesn’t just affect channel mix or creative formats, but can change how companies operate at the core — across product, revenue, and marketing. When discovery, research, and sometimes purchase move to new interfaces and new decision flows, it also affects the marketing operating model.
 
-That's why the CMO role becomes so central in this shift. Because change is driven from two directions simultaneously: internally (how AI changes workflows, teams, cost structure, and quality) and externally (how AI search and agentic commerce shift customer behaviors and rules of the game). And "on top of that" comes all the usual: transformation projects already rolling, pressed budgets, increased demands for results, and an organisation that's often more siloed than anyone wants to admit.
+That’s why the CMO role becomes so central in this shift. The change is driven from two directions at once: internally (how AI changes ways of working, teams, cost structure, and quality) and externally (how AI search and agentic commerce move customer behavior and the rules of the game). And on top of that comes all the usual: transformation projects already in motion, pressured budgets, higher demands for impact, and an organisation that is often more siloed than you want to admit.
 
-That's the reality I want to help with. I get many questions from CMOs and leadership teams, and I notice that many struggle with the same pattern: enormous potential, but limited overview and a daily life that quickly becomes more complex when new tools, new agents, and new workflows need to fit in.
+That’s the reality I want to help with. I see many wrestling with the same pattern: enormous potential, but limited overview — and a daily reality that quickly gets more complex when new tools, new agents, and new ways of working need to fit in.
 
-So I'm collecting my questions, answers, reflections, and observations here – as transparently as I can – because this area is too important (and too interesting) to stay behind closed doors.`,
+Here I share ongoing questions & answers, reflections, and observations on the topic — as transparently as I can. This is too important to stay behind closed doors.`,
     readMore: 'Read more',
     readLess: 'Show less',
     author: 'Matilda Rydow',
@@ -70,7 +71,7 @@ function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery }) {
 
   const copyLink = (e) => {
     e.stopPropagation()
-    const url = `${window.location.origin}/fragor#${faq.id}`
+    const url = `${window.location.origin}/${lang}/fragor#${faq.id}`
     navigator.clipboard.writeText(url)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
@@ -153,19 +154,26 @@ function highlightText(text, query) {
 
 function formatAnswer(text, searchQuery = '') {
   return text
-    .split('\n\n')
+    .split(/\n\s*\n/)
     .map(paragraph => {
-      if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
-        const content = highlightText(paragraph.slice(2, -2), searchQuery)
+      const trimmed = paragraph.replace(/^[\s\u00A0]+/u, '')
+      const listItemRegex = /^\s*-\s+/u
+
+      if (trimmed.startsWith('**') && trimmed.endsWith('**')) {
+        const content = highlightText(trimmed.slice(2, -2), searchQuery)
         return `<h3>${content}</h3>`
       }
+
+      const rawLines = paragraph.split('\n')
+      const listLines = rawLines.filter(line => listItemRegex.test(line))
+      const hasInlineList = listLines.length > 0
 
       let formatted = paragraph.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
       formatted = highlightText(formatted, searchQuery)
 
-      if (paragraph.startsWith('- ')) {
-        const items = paragraph.split('\n').map(item => {
-          let itemText = item.replace(/^- /, '')
+      if (listItemRegex.test(trimmed)) {
+        const items = rawLines.map(item => {
+          let itemText = item.replace(listItemRegex, '')
           itemText = itemText.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
           itemText = highlightText(itemText, searchQuery)
           return `<li>${itemText}</li>`
@@ -173,8 +181,23 @@ function formatAnswer(text, searchQuery = '') {
         return `<ul>${items}</ul>`
       }
 
-      if (/^\d+\.\s/.test(formatted)) {
-        return `<p class="faq-numbered">${formatted}</p>`
+      if (hasInlineList) {
+        const introLines = rawLines.filter(line => !listItemRegex.test(line))
+        const introText = introLines.join(' ').replace(/\s+/g, ' ').trim()
+        const introFormatted = introText
+          ? `<p>${highlightText(introText.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>'), searchQuery)}</p>`
+          : ''
+        const items = listLines.map(item => {
+          let itemText = item.replace(listItemRegex, '')
+          itemText = itemText.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+          itemText = highlightText(itemText, searchQuery)
+          return `<li>${itemText}</li>`
+        }).join('')
+        return `${introFormatted}<ul>${items}</ul>`
+      }
+
+      if (/^\d+\.\s/.test(trimmed)) {
+        return `<p class="faq-numbered">${formatted.trimStart()}</p>`
       }
 
       return `<p>${formatted}</p>`
@@ -197,6 +220,37 @@ export default function Writing() {
   const [activeCategory, setActiveCategory] = useState('all')
   const [searchQuery, setSearchQuery] = useState('')
   const [introExpanded, setIntroExpanded] = useState(false)
+
+  useEffect(() => {
+    const origin = 'https://matildarydow.com'
+    const basePath = lang === 'sv' ? '/sv' : '/en'
+    const description = lang === 'sv'
+      ? 'Frågor och svar om AI i marketing, agentic commerce, martech, data/analytics och operating model.'
+      : 'Questions and answers on AI in marketing, agentic commerce, martech, data/analytics, and operating model.'
+
+    document.documentElement.lang = lang
+    applyPageMeta({
+      title: lang === 'sv' ? 'Frågor & Svar om AI i Marketing' : 'Q&A on AI in Marketing',
+      description,
+      ogTitle: lang === 'sv' ? 'Frågor & Svar om AI i Marketing' : 'Q&A on AI in Marketing',
+      ogDescription: description,
+      ogImage: `${origin}/matilda-portrait.jpg`,
+      locale: lang === 'sv' ? 'sv_SE' : 'en_US',
+      canonical: `${origin}${basePath}/fragor`,
+    })
+
+    setHreflangLinks([
+      { lang: 'sv', href: `${origin}/sv/fragor` },
+      { lang: 'en', href: `${origin}/en/fragor` },
+      { lang: 'x-default', href: `${origin}/sv/fragor` },
+    ])
+  }, [lang])
+
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }, [location.pathname, location.hash])
 
   // Handle anchor links - open the FAQ item if there's a hash in the URL
   useEffect(() => {
@@ -251,7 +305,7 @@ export default function Writing() {
     })
     // Update URL hash when opening
     if (!openItems.has(id)) {
-      window.history.replaceState(null, '', `/fragor#${id}`)
+      window.history.replaceState(null, '', `/${lang}/fragor#${id}`)
     }
   }
 
