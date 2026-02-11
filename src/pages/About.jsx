@@ -133,12 +133,12 @@ export default function About() {
     const origin = 'https://matildarydow.com'
     const basePath = lang === 'sv' ? '/sv' : '/en'
     const description = lang === 'sv'
-      ? 'Rådgivare inom martech, data/analytics och AI. Fokus på både tech och organisation.'
-      : 'Advisor in martech, data/analytics, and AI with a focus on tech and organization.'
+      ? 'Matilda Rydow – AI-rådgivare inom martech, data/analytics och AI-agenter. Fd Group COO på Precis, byggde Alvie och Wilgot. Hjälper e-handel, SaaS och B2B.'
+      : 'Matilda Rydow – AI advisor specializing in martech, data/analytics, and AI agents. Former Group COO at Precis, built Alvie and Wilgot. Helping e-commerce, SaaS, and B2B.'
 
     document.documentElement.lang = lang
     applyPageMeta({
-      title: lang === 'sv' ? 'Hej, jag heter Matilda — Om mig' : 'Hi, I’m Matilda — About',
+      title: lang === 'sv' ? 'Om mig — Matilda Rydow' : 'About — Matilda Rydow',
       description,
       ogTitle: lang === 'sv' ? 'Hej, jag heter Matilda' : 'Hi, I’m Matilda',
       ogDescription: description,
@@ -165,7 +165,7 @@ export default function About() {
 
   return (
     <section className="section">
-      <div className="container container--prose">
+      <div className="container about-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -182,7 +182,14 @@ export default function About() {
               dangerouslySetInnerHTML={{ __html: t.intro.replace(/\n\n/g, '</p><p>') }}
             />
             <div className="about-portrait">
-              <img src="/matilda-portrait.jpg" alt={t.portraitAlt} loading="lazy" />
+              <img
+                src="/matilda-portrait.jpg"
+                srcSet="/matilda-portrait-mobile.jpg 480w, /matilda-portrait.jpg 726w"
+                sizes="(max-width: 768px) 160px, 240px"
+                alt={t.portraitAlt}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </motion.div>

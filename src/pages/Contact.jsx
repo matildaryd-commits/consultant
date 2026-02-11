@@ -51,14 +51,14 @@ export default function Contact() {
     const origin = 'https://matildarydow.com'
     const basePath = lang === 'sv' ? '/sv' : '/en'
     const description = lang === 'sv'
-      ? 'Kontakta Matilda Rydow för samtal om martech, data/analytics och AI.'
-      : 'Contact Matilda Rydow to discuss martech, data/analytics, and AI.'
+      ? 'Boka AI-rådgivning, workshop eller föreläsning med Matilda Rydow. Expertis inom martech, data/analytics och AI för marknadsavdelningar.'
+      : 'Book AI consulting, workshop, or speaking with Matilda Rydow. Expertise in martech, data/analytics, and AI for marketing teams.'
 
     document.documentElement.lang = lang
     applyPageMeta({
-      title: lang === 'sv' ? 'Kontakt — Matilda Rydow' : 'Contact — Matilda Rydow',
+      title: lang === 'sv' ? 'Boka AI-rådgivning eller Föreläsning | Matilda Rydow' : 'Book AI Consulting or Speaking | Matilda Rydow',
       description,
-      ogTitle: lang === 'sv' ? 'Kontakt' : 'Contact',
+      ogTitle: lang === 'sv' ? 'Boka AI-rådgivning eller Föreläsning' : 'Book AI Consulting or Speaking',
       ogDescription: description,
       ogImage: `${origin}/matilda-portrait.jpg`,
       locale: lang === 'sv' ? 'sv_SE' : 'en_US',

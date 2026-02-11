@@ -822,31 +822,52 @@ export const faqs = [
     }
 ]
 
-// Helper to get FAQ schema for SEO
+// Helper to get FAQ schema for SEO and LLM visibility
 export function generateFAQSchema(faqs, lang) {
+  const baseUrl = 'https://matildarydow.com'
+  const pagePath = lang === 'sv' ? '/sv/fragor' : '/en/fragor'
+
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    name: lang === 'sv' ? 'Frågor & Svar om AI i Marketing' : 'Q&A on AI in Marketing',
+    description: lang === 'sv'
+      ? 'Expertinsikter om AI i marketing, agentic commerce, martech och operating models från Matilda Rydow.'
+      : 'Expert insights on AI in marketing, agentic commerce, martech, and operating models from Matilda Rydow.',
+    url: `${baseUrl}${pagePath}`,
+    inLanguage: lang === 'sv' ? 'sv-SE' : 'en-US',
+    author: {
+      '@type': 'Person',
+      name: 'Matilda Rydow',
+      url: baseUrl,
+      jobTitle: 'AI Advisor & Consultant',
+    },
     mainEntity: faqs.map(faq => ({
       '@type': 'Question',
       name: faq[lang].question,
+      url: `${baseUrl}${pagePath}#${faq.id}`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: faq[lang].answer.replace(/\*\*/g, '').replace(/\n/g, ' '),
+        text: faq[lang].answer.replace(/\*\*/g, '').replace(/\n/g, ' ').trim(),
+        author: {
+          '@type': 'Person',
+          name: 'Matilda Rydow',
+        },
       },
     })),
   }
 }
 
-// Helper to generate Person schema for authority
+// Helper to generate Person schema for authority and E-E-A-T
 export function generatePersonSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Matilda Rydow',
     jobTitle: 'AI Advisor & Consultant',
-    description: 'Strategic AI advisor for Nordic CMOs. Expert in martech, data & analytics, and AI-driven operating models.',
+    description: 'Strategic AI advisor helping Nordic CMOs and leadership teams navigate AI transformation. Expert in martech, data & analytics, and AI-driven operating models with 10+ years of experience.',
     url: 'https://matildarydow.com',
+    image: 'https://matildarydow.com/matilda-portrait.jpg',
     sameAs: [
       'https://www.linkedin.com/in/matilda-rydow-13057161/',
     ],
@@ -858,15 +879,31 @@ export function generatePersonSchema() {
       'AI Agents',
       'Agentic Commerce',
       'Marketing Transformation',
+      'CMO Advisory',
+      'Marketing Measurement',
+      'Attribution',
+      'MMM',
+      'Agency Management',
     ],
+    hasOccupation: {
+      '@type': 'Occupation',
+      name: 'AI Advisor',
+      occupationLocation: {
+        '@type': 'Country',
+        name: 'Sweden',
+      },
+      description: 'Advising CMOs and leadership teams on AI strategy, operating models, and marketing transformation',
+    },
     alumniOf: [
-      { '@type': 'Organisation', name: 'Precis' },
-      { '@type': 'Organisation', name: 'Ving/Thomas Cook' },
-      { '@type': 'Organisation', name: 'Tikkurila' },
+      { '@type': 'Organization', name: 'Precis', description: 'Group COO and CEO' },
+      { '@type': 'Organization', name: 'Ving/Thomas Cook', description: 'Martech Lead' },
     ],
     founder: [
-      { '@type': 'Organisation', name: 'Alvie by Precis' },
-      { '@type': 'Organisation', name: 'Wilgot' },
+      { '@type': 'Organization', name: 'Alvie', description: 'Attribution and marketing intelligence platform' },
+      { '@type': 'Organization', name: 'Wilgot', description: 'Agentic commerce and GEO platform' },
+    ],
+    award: [
+      'Featured in Resumé "99 women taking marketing and tech to the next level"',
     ],
   }
 }

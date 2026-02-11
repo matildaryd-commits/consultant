@@ -1,53 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Startsida / Home -->
   <url>
     <loc>https://matildarydow.com/sv/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://matildarydow.com/sv/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://matildarydow.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://matildarydow.com/sv/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://matildarydow.com/sv/om</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://matildarydow.com/sv/fragor</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://matildarydow.com/sv/kontakt</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://matildarydow.com/sv/kontakt/tack</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://matildarydow.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://matildarydow.com/sv/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://matildarydow.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://matildarydow.com/sv/" />
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Om / About -->
+  <url>
+    <loc>https://matildarydow.com/sv/om</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://matildarydow.com/sv/om" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://matildarydow.com/en/om" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://matildarydow.com/sv/om" />
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://matildarydow.com/en/om</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://matildarydow.com/sv/om" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://matildarydow.com/en/om" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://matildarydow.com/sv/om" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Frågor / Q&A -->
+  <url>
+    <loc>https://matildarydow.com/sv/fragor</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://matildarydow.com/sv/fragor" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://matildarydow.com/en/fragor" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://matildarydow.com/sv/fragor" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://matildarydow.com/en/fragor</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://matildarydow.com/sv/fragor" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://matildarydow.com/en/fragor" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://matildarydow.com/sv/fragor" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Kontakt / Contact -->
+  <url>
+    <loc>https://matildarydow.com/sv/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://matildarydow.com/sv/kontakt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://matildarydow.com/en/kontakt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://matildarydow.com/sv/kontakt" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://matildarydow.com/en/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://matildarydow.com/sv/kontakt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://matildarydow.com/en/kontakt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://matildarydow.com/sv/kontakt" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://matildarydow.com/en/kontakt/tack</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.2</priority>
-  </url>
+
 </urlset>

@@ -79,7 +79,6 @@ function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery }) {
 
   return (
     <motion.article
-      id={faq.id}
       className="faq-item"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
@@ -94,7 +93,7 @@ function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery }) {
         aria-expanded={isOpen}
         aria-controls={`faq-answer-${faq.id}`}
       >
-        <h2 itemProp="name">{localized.question}</h2>
+        <h2 id={faq.id} itemProp="name">{localized.question}</h2>
         <div className="faq-item__actions">
           <span
             className="faq-item__copy"
@@ -225,14 +224,14 @@ export default function Writing() {
     const origin = 'https://matildarydow.com'
     const basePath = lang === 'sv' ? '/sv' : '/en'
     const description = lang === 'sv'
-      ? 'Frågor och svar om AI i marketing, agentic commerce, martech, data/analytics och operating model.'
-      : 'Questions and answers on AI in marketing, agentic commerce, martech, data/analytics, and operating model.'
+      ? 'Expertguide om AI i marknadsföring: organisation, AI-agenter, agentic commerce, byråsamarbeten och mätning. Frågor & svar från Matilda Rydow.'
+      : 'Expert guide on AI in marketing: organization, AI agents, agentic commerce, agency collaboration, and measurement. Q&A from Matilda Rydow.'
 
     document.documentElement.lang = lang
     applyPageMeta({
-      title: lang === 'sv' ? 'Frågor & Svar om AI i Marketing' : 'Q&A on AI in Marketing',
+      title: lang === 'sv' ? 'Guide: AI i Marknadsföring – Frågor & Svar | Matilda Rydow' : 'Guide: AI in Marketing – Q&A | Matilda Rydow',
       description,
-      ogTitle: lang === 'sv' ? 'Frågor & Svar om AI i Marketing' : 'Q&A on AI in Marketing',
+      ogTitle: lang === 'sv' ? 'Guide: AI i Marknadsföring' : 'Guide: AI in Marketing',
       ogDescription: description,
       ogImage: `${origin}/matilda-portrait.jpg`,
       locale: lang === 'sv' ? 'sv_SE' : 'en_US',
@@ -270,26 +269,57 @@ export default function Writing() {
     }
   }, [location.hash])
 
-  // Inject JSON-LD schema on mount
+  // Inject JSON-LD schemas on mount
   useEffect(() => {
+    const baseUrl = 'https://matildarydow.com'
+
+    // FAQ Schema
     const faqSchema = document.createElement('script')
     faqSchema.type = 'application/ld+json'
     faqSchema.id = 'faq-schema'
     faqSchema.textContent = JSON.stringify(generateFAQSchema(faqs, lang))
 
+    // Person Schema
     const personSchema = document.createElement('script')
     personSchema.type = 'application/ld+json'
     personSchema.id = 'person-schema'
     personSchema.textContent = JSON.stringify(generatePersonSchema())
 
+    // Breadcrumb Schema for navigation
+    const breadcrumbSchema = document.createElement('script')
+    breadcrumbSchema.type = 'application/ld+json'
+    breadcrumbSchema.id = 'breadcrumb-schema'
+    breadcrumbSchema.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: lang === 'sv' ? 'Hem' : 'Home',
+          item: `${baseUrl}/${lang}`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: lang === 'sv' ? 'Frågor & Svar' : 'Q&A',
+          item: `${baseUrl}/${lang}/fragor`,
+        },
+      ],
+    })
+
+    // Remove old schemas and add new ones
     document.getElementById('faq-schema')?.remove()
     document.getElementById('person-schema')?.remove()
+    document.getElementById('breadcrumb-schema')?.remove()
     document.head.appendChild(faqSchema)
     document.head.appendChild(personSchema)
+    document.head.appendChild(breadcrumbSchema)
 
     return () => {
       document.getElementById('faq-schema')?.remove()
       document.getElementById('person-schema')?.remove()
+      document.getElementById('breadcrumb-schema')?.remove()
     }
   }, [lang])
 

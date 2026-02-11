@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="AI‑rådgivare för CMO:er och ledningsgrupper. Bygger AI‑drivna marketing‑ och dataorganisationer. Strategi, operating model och teknik." />
-    <meta name="keywords" content="AI rådgivning, CMO, ledningsgrupp, marketing, data, operating model, martech" />
+    <meta name="description" content="AI-konsult som hjälper CMO:er och marknadsavdelningar med martech, data/analytics och AI-agenter. Fd Group COO på Precis. Boka rådgivning." />
+    <meta name="keywords" content="AI rådgivning, CMO, ledningsgrupp, marketing, data, operating model, martech, agentic commerce, AI agenter" />
+    <meta name="author" content="Matilda Rydow" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#FDF9F3" />
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -16,17 +19,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- End Google Tag Manager -->
 
     <!-- Open Graph -->
-    <meta property="og:title" content="AI‑rådgivare för CMO:er och ledningsgrupper" />
-    <meta property="og:description" content="Bygger AI‑drivna marketing‑ och dataorganisationer. Strategi, operating model och teknik." />
+    <meta property="og:title" content="Matilda Rydow — AI‑rådgivare för CMO:er och ledningsgrupper" />
+    <meta property="og:description" content="AI-konsult som hjälper CMO:er och marknadsavdelningar med martech, data/analytics och AI-agenter. Fd Group COO på Precis." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="sv_SE" />
+    <meta property="og:url" content="https://matildarydow.com" />
+    <meta property="og:image" content="https://matildarydow.com/matilda-portrait.jpg" />
+    <meta property="og:site_name" content="Matilda Rydow" />
 
-    <!-- Fonts -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Matilda Rydow — AI‑rådgivare" />
+    <meta name="twitter:description" content="AI-konsult som hjälper CMO:er och marknadsavdelningar med martech, data/analytics och AI-agenter. Fd Group COO på Precis." />
+    <meta name="twitter:image" content="https://matildarydow.com/matilda-portrait.jpg" />
+
+    <!-- Fonts - Async loading to prevent render blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <title>Matilda Rydow, AI, Marketing and Data</title>
+    <!-- Preload critical font files -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Critical CSS - show content immediately with system fonts -->
+    <style>
+      /* Prevent FOUT/FOIT - show content immediately */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #FDF9F3;
+        color: #2C2416;
+        margin: 0;
+      }
+      /* Hide content flash */
+      .loading { opacity: 0; }
+      .loaded { opacity: 1; transition: opacity 0.2s; }
+    </style>
+
+    <!-- Load fonts asynchronously - prevents render blocking -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+    </noscript>
+
+    <!-- WebSite Schema for search engines and LLMs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Matilda Rydow",
+      "alternateName": "Matilda Rydow AI Advisor",
+      "url": "https://matildarydow.com",
+      "description": "AI-rådgivare för CMO:er och ledningsgrupper. Expert inom martech, data & analytics och AI-drivna operating models.",
+      "inLanguage": ["sv-SE", "en-US"],
+      "author": {
+        "@type": "Person",
+        "name": "Matilda Rydow",
+        "jobTitle": "AI Advisor & Consultant",
+        "url": "https://matildarydow.com"
+      }
+    }
+    </script>
+
+    <title>Matilda Rydow — AI, Marketing and Data</title>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->

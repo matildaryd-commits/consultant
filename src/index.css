@@ -13,12 +13,12 @@
   --graphite: #5C5343;
   --steel: #7D7366;
   --silver: #A69E8F;
-  --fog: #EDE8DF;
-  --paper: #FBF8F3;
-  --white: #FFFCF7;
+  --fog: #E8E2D6;
+  --paper: #F7F3EB;
+  --white: #FDF9F3;
 
   /* Warm Accents */
-  --cream: #FFFBF0;
+  --cream: #FAF6EC;
   --butter: #FFF7E0;
   --citron: #FFF3CC;
   --honey: #FFECB3;
@@ -269,7 +269,7 @@ a:hover {
   left: 0;
   right: 0;
   height: var(--header-height);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(253, 249, 243, 0.9);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-faint);
   z-index: 100;
@@ -304,7 +304,7 @@ a:hover {
 
 .header__nav a {
   font-size: var(--text-sm);
-  color: var(--text-muted);
+  color: var(--text-secondary);
   transition: color var(--transition-fast);
 }
 
@@ -436,15 +436,20 @@ a:hover {
 
 .about-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 220px);
-  gap: var(--space-10);
+  grid-template-columns: 1fr 240px;
+  gap: var(--space-12);
   align-items: start;
   margin-bottom: var(--space-16);
 }
 
+/* Wider container for about page hero */
+.about-container {
+  max-width: var(--max-width-content);
+}
+
 .about-portrait {
   width: 100%;
-  max-width: 220px;
+  max-width: 240px;
   justify-self: end;
   opacity: 0.9;
   margin-top: 6px;
@@ -623,11 +628,18 @@ a:hover {
    About/Background — Narrative Style
    -------------------------------------------------------------------------- */
 .about-intro {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   line-height: var(--leading-relaxed);
   color: var(--text-secondary);
-  max-width: var(--max-width-prose);
-  margin-bottom: var(--space-16);
+  margin-bottom: 0;
+}
+
+.about-intro p {
+  margin-bottom: var(--space-4);
+}
+
+.about-intro p:last-child {
+  margin-bottom: 0;
 }
 
 .about-intro strong {
@@ -997,6 +1009,112 @@ a:hover {
   border-color: color-mix(in srgb, var(--text-primary) 40%, transparent);
 }
 
+/* --------------------------------------------------------------------------
+   Thank You Page
+   -------------------------------------------------------------------------- */
+.thanks-content {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.thanks-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: var(--accent-soft);
+  border-radius: 50%;
+  color: var(--accent);
+  margin-bottom: var(--space-8);
+}
+
+.thanks-title {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-medium);
+  margin-bottom: var(--space-6);
+}
+
+.thanks-intro {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-10);
+}
+
+.thanks-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.thanks-divider::before,
+.thanks-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-light);
+}
+
+.thanks-divider span {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.thanks-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-12);
+}
+
+.thanks-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.thanks-link:hover {
+  background: var(--bg-code);
+  border-color: var(--fog);
+  color: var(--text-primary);
+}
+
+.thanks-link:hover svg {
+  color: var(--accent);
+}
+
+.thanks-link svg {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.thanks-home {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.thanks-home:hover {
+  color: var(--text-primary);
+}
 
 /* --------------------------------------------------------------------------
    Footer — Minimal
@@ -1272,9 +1390,9 @@ a:hover {
   height: 6em;
   background: linear-gradient(
     to bottom,
-    rgba(255, 252, 247, 0) 0%,
-    rgba(255, 252, 247, 0.8) 50%,
-    rgba(255, 252, 247, 1) 100%
+    rgba(253, 249, 243, 0) 0%,
+    rgba(253, 249, 243, 0.8) 50%,
+    rgba(253, 249, 243, 1) 100%
   );
   pointer-events: none;
 }
@@ -1434,6 +1552,10 @@ a:hover {
 
 .faq-item {
   border-bottom: 1px solid var(--border-light);
+}
+
+/* Anchor target for SEO - ID is on h2 for Google to link directly */
+.faq-item__question h2[id] {
   scroll-margin-top: calc(var(--header-height) + var(--space-6));
 }
 
@@ -1812,6 +1934,20 @@ a:hover {
 /* --------------------------------------------------------------------------
    Responsive
    -------------------------------------------------------------------------- */
+
+/* Tablet */
+@media (max-width: 960px) {
+  .about-hero {
+    grid-template-columns: 1fr 200px;
+    gap: var(--space-8);
+  }
+
+  .about-portrait {
+    max-width: 200px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   :root {
     --text-4xl: 2rem;
@@ -1830,10 +1966,20 @@ a:hover {
     font-size: var(--text-4xl);
   }
 
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
   .about-portrait {
     justify-self: start;
-    max-width: 200px;
+    max-width: 160px;
     margin-top: 0;
+    order: -1;
+  }
+
+  .about-intro {
+    margin-bottom: 0;
   }
 
   .focus-item {

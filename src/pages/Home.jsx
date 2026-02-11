@@ -71,14 +71,14 @@ export default function Home() {
     const origin = 'https://matildarydow.com'
     const basePath = lang === 'sv' ? '/sv' : '/en'
     const description = lang === 'sv'
-      ? 'Rådgivare inom martech, data/analytics och AI. Hjälper CMO:er och ledningsgrupper med strategi, operating model och teknik.'
-      : 'Advisor in martech, data/analytics, and AI. Helping CMOs and leadership teams with strategy, operating model, and technology.'
+      ? 'AI-konsult som hjälper CMO:er och marknadsavdelningar med martech, data/analytics och AI-agenter. Fd Group COO på Precis. Boka rådgivning.'
+      : 'AI consultant helping CMOs and marketing teams with martech, data/analytics, and AI agents. Former Group COO at Precis. Book a consultation.'
 
     document.documentElement.lang = lang
     applyPageMeta({
-      title: lang === 'sv' ? 'Matilda Rydow — AI‑rådgivning för marketing och data' : 'Matilda Rydow — AI advisor for marketing and data',
+      title: lang === 'sv' ? 'AI-konsult för Marknadsföring & Data | Matilda Rydow' : 'AI Consultant for Marketing & Data | Matilda Rydow',
       description,
-      ogTitle: lang === 'sv' ? 'Matilda Rydow — AI‑rådgivare' : 'Matilda Rydow — AI advisor',
+      ogTitle: lang === 'sv' ? 'AI-konsult för Marknadsföring & Data' : 'AI Consultant for Marketing & Data',
       ogDescription: description,
       ogImage: `${origin}/matilda-portrait.jpg`,
       locale: lang === 'sv' ? 'sv_SE' : 'en_US',
