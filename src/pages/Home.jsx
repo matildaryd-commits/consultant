@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { useLanguage, getLocalizedPath } from '../hooks/useLanguage'
+import { getFaqId } from '../data/faq'
 import { faqs } from '../data/faq'
 import { applyPageMeta, setHreflangLinks } from '../utils/seo'
 
@@ -136,12 +137,14 @@ export default function Home() {
           <div className="label mb-8">{t.now.title}</div>
           <div className="now-grid">
             {nowLinks.map(item => {
-              const question = faqById[item.id]?.[lang]?.question
+              const faq = faqById[item.id]
+              const question = faq?.[lang]?.question
+              const faqId = faq ? getFaqId(faq, lang) : item.id
               return (
                 <div className="now-item" key={item.id}>
                   <div className="now-item__label">{item.label}</div>
                   <div className="now-item__value">
-                    <Link to={`${getLocalizedPath(lang, 'fragor')}#${item.id}`}>
+                    <Link to={`${getLocalizedPath(lang, 'fragor')}#${faqId}`}>
                       {question} <ArrowUpRight size={12} />
                     </Link>
                   </div>
@@ -173,7 +176,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <Link to={`${getLocalizedPath(lang, 'fragor')}#${faq.id}`}>
+                  <Link to={`${getLocalizedPath(lang, 'fragor')}#${getFaqId(faq, lang)}`}>
                     <h3 className="writing-item__title">
                       {localized.question}
                     </h3>

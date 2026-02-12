@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Link as LinkIcon } from 'lucide-react'
 import { useLanguage, getLocalizedPath } from '../hooks/useLanguage'
-import { faqs, faqCategories, generateFAQSchema, generatePersonSchema } from '../data/faq'
+import { faqs, faqCategories, generateFAQSchema, generatePersonSchema, getFaqId, findFaqById } from '../data/faq'
 import { applyPageMeta, setHreflangLinks } from '../utils/seo'
 
 const content = {
@@ -68,10 +68,11 @@ Here I share ongoing questions & answers, reflections, and observations on the t
 function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery }) {
   const localized = faq[lang]
   const [copied, setCopied] = useState(false)
+  const faqId = getFaqId(faq, lang)
 
   const copyLink = (e) => {
     e.stopPropagation()
-    const url = `${window.location.origin}${getLocalizedPath(lang, 'fragor')}#${faq.id}`
+    const url = `${window.location.origin}${getLocalizedPath(lang, 'fragor')}#${faqId}`
     navigator.clipboard.writeText(url)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
@@ -91,9 +92,9 @@ function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery }) {
         className={`faq-item__question ${isOpen ? 'faq-item__question--open' : ''}`}
         onClick={onToggle}
         aria-expanded={isOpen}
-        aria-controls={`faq-answer-${faq.id}`}
+        aria-controls={`faq-answer-${faqId}`}
       >
-        <h2 id={faq.id} itemProp="name">{localized.question}</h2>
+        <h2 id={faqId} itemProp="name">{localized.question}</h2>
         <div className="faq-item__actions">
           <span
             className="faq-item__copy"
@@ -112,7 +113,7 @@ function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery }) {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            id={`faq-answer-${faq.id}`}
+            id={`faq-answer-${faqId}`}
             className="faq-item__answer"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
@@ -255,19 +256,22 @@ export default function Writing() {
   useEffect(() => {
     const hash = location.hash.slice(1) // Remove the #
     if (hash) {
-      const faq = faqs.find(f => f.id === hash)
+      // Find FAQ by either Swedish id or English enId
+      const faq = findFaqById(hash)
       if (faq) {
-        setOpenItems(new Set([hash]))
+        setOpenItems(new Set([faq.id])) // Always track by internal Swedish id
         // Scroll to the element after a short delay to let it render
         setTimeout(() => {
-          const element = document.getElementById(hash)
+          // Element uses language-specific ID
+          const faqId = getFaqId(faq, lang)
+          const element = document.getElementById(faqId)
           if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }
         }, 100)
       }
     }
-  }, [location.hash])
+  }, [location.hash, lang])
 
   // Inject JSON-LD schemas on mount
   useEffect(() => {
@@ -323,19 +327,23 @@ export default function Writing() {
     }
   }, [lang])
 
-  const toggleItem = (id) => {
+  const toggleItem = (internalId) => {
     setOpenItems(prev => {
       const next = new Set(prev)
-      if (next.has(id)) {
-        next.delete(id)
+      if (next.has(internalId)) {
+        next.delete(internalId)
       } else {
-        next.add(id)
+        next.add(internalId)
       }
       return next
     })
-    // Update URL hash when opening
-    if (!openItems.has(id)) {
-      window.history.replaceState(null, '', `${getLocalizedPath(lang, 'fragor')}#${id}`)
+    // Update URL hash when opening (use language-specific ID)
+    if (!openItems.has(internalId)) {
+      const faq = faqs.find(f => f.id === internalId)
+      if (faq) {
+        const faqId = getFaqId(faq, lang)
+        window.history.replaceState(null, '', `${getLocalizedPath(lang, 'fragor')}#${faqId}`)
+      }
     }
   }
 

@@ -49,6 +49,7 @@ export const faqCategories = [
 export const faqs = [
   {
       id: 'organisera-marknadsavdelning',
+      enId: 'organize-marketing-department',
       categories: ['organisation', 'kompetens'],
       sv: {
         question: 'Hur bör en marknadsavdelning organiseras 2026–2027 och framåt?',
@@ -157,6 +158,7 @@ export const faqs = [
     },
   {
       id: 'agentic-commerce-vad-ar',
+      enId: 'what-is-agentic-commerce',
       categories: ['agentic-commerce', 'organisation'],
       sv: {
         question: 'Vad är agentic commerce och varför påverkar det även SaaS, B2B och appar?',
@@ -185,6 +187,7 @@ export const faqs = [
     },
   {
       id: 'modern-funnel-ny-lojal',
+      enId: 'modern-funnel-new-loyal',
       categories: ['agentic-commerce', 'organisation'],
       sv: {
         question: 'Hur kommer en kundresa ut när gränsen mellan ny och lojal kund suddas ut?',
@@ -203,6 +206,7 @@ export const faqs = [
     },
   {
       id: 'cro-flyttar-fran-storefront',
+      enId: 'cro-moves-from-storefront',
       categories: ['agentic-commerce'],
       sv: {
         question: 'Hur förändras CRO (Conversion rate optimisation) när research och rekommendation flyttar bort från storefront?',
@@ -223,6 +227,7 @@ export const faqs = [
     },
   {
       id: 'trust-signaler-agent',
+      enId: 'trust-signals-for-agents',
       categories: ['agentic-commerce'],
       sv: {
         question: 'Vilka trust‑signaler blir viktigare när en agent gör jämförelsen åt kunden?',
@@ -253,6 +258,7 @@ export const faqs = [
     },
   {
       id: 'silos-effektivitet-marketing',
+      enId: 'silos-efficiency-marketing',
       categories: ['organisation'],
       sv: {
         question: 'Hur märker man att man har problem med silos på bolaget?',
@@ -273,6 +279,7 @@ export const faqs = [
     },
   {
       id: 'silos-skadliga-marketing-ecom-crm',
+      enId: 'silos-harmful-marketing-ecom-crm',
       categories: ['organisation'],
       sv: {
         question: 'Vilka silos är de mest problematiska inom marketing, e‑com och CRM?',
@@ -297,6 +304,7 @@ export const faqs = [
     },
   {
       id: 'minska-handoffs-friktion',
+      enId: 'reduce-handoffs-friction',
       categories: ['organisation', 'kompetens'],
       sv: {
         question: 'Hur får man färre överlämningar och samtidigt behåller specialistkraften?',
@@ -321,6 +329,7 @@ export const faqs = [
     },
   {
       id: 'gemensamma-mal-marketing-ecom-crm',
+      enId: 'shared-goals-marketing-ecom-crm',
       categories: ['organisation', 'measurement'],
       sv: {
         question: 'Hur sätter man och bryter ner gemensamma mål?',
@@ -345,6 +354,7 @@ export const faqs = [
     },
   {
       id: 'undvik-spretiga-ai-initiativ',
+      enId: 'avoid-scattered-ai-initiatives',
       categories: ['ai-agenter', 'organisation'],
       sv: {
         question: 'Hur undviker man att marknadsavdelningens AI‑initiativ blir allt för spretiga?',
@@ -373,6 +383,7 @@ export const faqs = [
     },
   {
       id: 'agent-governance-enkel',
+      enId: 'agent-governance-simple',
       categories: ['ai-agenter', 'implementering'],
       sv: {
         question: 'Hur bygger man en agent governance på bolaget och på marketingavdelningen utan att skapa byråkrati?',
@@ -403,6 +414,7 @@ export const faqs = [
     },
   {
       id: 'mappa-manskliga-ai-tasks',
+      enId: 'map-human-ai-tasks',
       categories: ['ai-agenter', 'organisation', 'implementering'],
       sv: {
         question: 'Hur mappar man mänskliga tasks vs AI‑tasks?',
@@ -427,6 +439,7 @@ export const faqs = [
     },
   {
       id: 'tech-stack-krav-ai-effekt',
+      enId: 'tech-stack-requirements-ai-effect',
       categories: ['tech', 'ai-agenter', 'measurement'],
       sv: {
         question: 'Vilken datakvalité måste man ha innan AI‑agenter ger riktig effekt?',
@@ -447,6 +460,7 @@ export const faqs = [
     },
   {
       id: 'ai-tech-stack-spretig',
+      enId: 'ai-tech-stack-fragmented',
       categories: ['tech', 'ai-agenter'],
       sv: {
         question: 'Hur förändrar AI marknadsavdelningens tech stack, och varför blir det lätt spretigt?',
@@ -467,6 +481,7 @@ export const faqs = [
     },
   {
       id: 'experimentmotor-kanalneutralt',
+      enId: 'experiment-engine-channel-neutral',
       categories: ['measurement', 'tech'],
       sv: {
         question: 'Hur bygger man en experimentmotor som inte ägs av en kanal?',
@@ -497,6 +512,7 @@ export const faqs = [
     },
   {
       id: 'agare-mmm-inkrementalitet',
+      enId: 'owner-mmm-incrementality',
       categories: ['kompetens', 'organisation', 'measurement'],
       sv: {
         question: 'Vem bör äga MMM och inkrementalitet, och varför räcker det inte med någon på analys?',
@@ -527,6 +543,7 @@ export const faqs = [
     },
   {
       id: 'geo-tester-parallella',
+      enId: 'geo-tests-parallel',
       categories: ['tech', 'measurement'],
       sv: {
         question: 'Hur designar man geo‑tester som fungerar trots många parallella initiativ?',
@@ -555,6 +572,7 @@ export const faqs = [
     },
   {
       id: 'byra-samarbete-minska-kommunikation',
+      enId: 'agency-collaboration-reduce-communication',
       categories: ['byraer', 'organisation'],
       sv: {
         question: 'Vad ska man tänka på i byråsamarbeten framåt?',
@@ -603,6 +621,7 @@ export const faqs = [
     },
   {
       id: 'leja-ut-kanal-nar',
+      enId: 'outsource-channel-when',
       categories: ['byraer', 'organisation'],
       sv: {
         question: 'När fungerar det att leja ut en operations av en kanal som helhet till en byrå, och när fungerar det inte?',
@@ -623,6 +642,7 @@ export const faqs = [
     },
   {
       id: 'byraer-viktigast-behalla',
+      enId: 'agencies-most-important-keep',
       categories: ['byraer'],
       sv: {
         question: 'Vilka byråer blir viktigast att samarbeta med 2026 och framåt?',
@@ -639,6 +659,7 @@ export const faqs = [
     },
   {
       id: 'externa-profiler-2026',
+      enId: 'external-profiles-2026',
       categories: ['byraer', 'kompetens'],
       sv: {
         question: 'Vilka externa profiler och/eller byråer ska man leta efter 2026 och framåt?',
@@ -668,6 +689,7 @@ export const faqs = [
     },
   {
       id: 'roller-viktigare-ai',
+      enId: 'roles-more-important-ai',
       categories: ['kompetens', 'ai-agenter'],
       sv: {
         question: 'Vilka roller ökar i betydelse när AI tar över mer av det repetitiva jobbet?',
@@ -696,6 +718,7 @@ export const faqs = [
     },
   {
       id: 'leda-team-manniskor-agenter',
+      enId: 'lead-team-humans-agents',
       categories: ['kompetens', 'ai-agenter'],
       sv: {
         question: 'Hur leder man ett team med både människor och AI‑agenter på bästa sätt?',
@@ -802,6 +825,7 @@ export const faqs = [
     },
   {
       id: 'pii-gdpr-sakerhet',
+      enId: 'pii-gdpr-security',
       categories: ['implementering', 'ai-agenter'],
       sv: {
         question: 'Hur hanterar man PII, GDPR och säkerhet när AI‑agenter kopplas till marketing och CRM?',
@@ -821,6 +845,19 @@ export const faqs = [
       },
     }
 ]
+
+// Helper to get the correct FAQ ID based on language
+export function getFaqId(faq, lang) {
+  if (lang === 'en' && faq.enId) {
+    return faq.enId
+  }
+  return faq.id
+}
+
+// Helper to find FAQ by ID (works with both sv and en IDs)
+export function findFaqById(id) {
+  return faqs.find(faq => faq.id === id || faq.enId === id)
+}
 
 // Helper to get FAQ schema for SEO and LLM visibility
 export function generateFAQSchema(faqs, lang) {
@@ -845,7 +882,7 @@ export function generateFAQSchema(faqs, lang) {
     mainEntity: faqs.map(faq => ({
       '@type': 'Question',
       name: faq[lang].question,
-      url: `${baseUrl}${pagePath}#${faq.id}`,
+      url: `${baseUrl}${pagePath}#${getFaqId(faq, lang)}`,
       acceptedAnswer: {
         '@type': 'Answer',
         text: faq[lang].answer.replace(/\*\*/g, '').replace(/\n/g, ' ').trim(),
