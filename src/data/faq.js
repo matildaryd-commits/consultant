@@ -825,7 +825,7 @@ export const faqs = [
 // Helper to get FAQ schema for SEO and LLM visibility
 export function generateFAQSchema(faqs, lang) {
   const baseUrl = 'https://matildarydow.com'
-  const pagePath = lang === 'sv' ? '/sv/fragor' : '/en/fragor'
+  const pagePath = lang === 'sv' ? '/sv/fragor' : '/en/faq'
 
   return {
     '@context': 'https://schema.org',

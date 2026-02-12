@@ -303,7 +303,7 @@ export default function Writing() {
           '@type': 'ListItem',
           position: 2,
           name: lang === 'sv' ? 'Frågor & Svar' : 'Q&A',
-          item: `${baseUrl}/${lang}/fragor`,
+          item: `${baseUrl}${getLocalizedPath(lang, 'fragor')}`,
         },
       ],
     })
