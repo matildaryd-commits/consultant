@@ -24,7 +24,7 @@ const content = {
   },
   en: {
     title: 'Contact',
-    intro: `Whether you have a concrete need within martech, AI, data/analytics, or marketing operating model — or simply find the topic interesting and want an initial conversation — feel free to drop a note and I’ll get back to you.`,
+    intro: `Whether you have a concrete need within martech, AI, data/analytics, or marketing operating model, or simply find the topic interesting and want an initial conversation, feel free to drop a note and I'll get back to you.`,
     form: {
       heading: '',
       name: 'Name',

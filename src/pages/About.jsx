@@ -67,9 +67,9 @@ Utöver att hjälpa bolag med martech, data/analytics och AI är jag ängelinves
   },
   en: {
     title: 'Hi, I’m Matilda',
-    subtitle: 'Advisor in martech, data/analytics, and AI — with a focus on both tech and organization.',
+    subtitle: 'Advisor in martech, data/analytics, and AI, with a focus on both tech and organization.',
     portraitAlt: 'Portrait of Matilda Rydow',
-    intro: `I work with <strong>martech, data/analytics, and AI</strong>. I help teams build solutions and ways of working that make data and AI actually used: from <strong>measurement, data models, and architecture</strong> to <strong>product decisions and priorities</strong>, and how <strong>AI agents</strong> are embedded in flows, ownership, and tools. But tech is rarely the whole answer. I put equal weight on the organizational side: <strong>clear roles and solid decision‑making</strong>, reasonable processes, and collaboration that holds up over time. When tech and organization pull in the same direction, things happen — and that’s where I tend to make the biggest difference.
+    intro: `I work with <strong>martech, data/analytics, and AI</strong>. I help teams build solutions and ways of working that make data and AI actually used: from <strong>measurement, data models, and architecture</strong> to <strong>product decisions and priorities</strong>, and how <strong>AI agents</strong> are embedded in flows, ownership, and tools. But tech is rarely the whole answer. I put equal weight on the organizational side: <strong>clear roles and solid decision‑making</strong>, reasonable processes, and collaboration that holds up over time. When tech and organization pull in the same direction, things happen. That's where I tend to make the biggest difference.
 
 Beyond helping companies with martech, data/analytics, and AI, I’m an angel investor. Previously I was Group COO and CEO at <strong>Precis</strong>, Martech Lead at Ving/Thomas Cook, and built Alvie (<strong>attribution/marketing intelligence</strong>) and Wilgot (<strong>agentic commerce</strong>/GEO).`,
     chapters: null,
@@ -138,7 +138,7 @@ export default function About() {
 
     document.documentElement.lang = lang
     applyPageMeta({
-      title: lang === 'sv' ? 'Om mig — Matilda Rydow' : 'About — Matilda Rydow',
+      title: lang === 'sv' ? 'Om mig | Matilda Rydow' : 'About | Matilda Rydow',
       description,
       ogTitle: lang === 'sv' ? 'Hej, jag heter Matilda' : 'Hi, I’m Matilda',
       ogDescription: description,

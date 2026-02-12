@@ -44,15 +44,15 @@ I’ve spent the last ten years deeply involved in digital marketing, especially
 
 Now AI enters and makes everything… both easier and harder.
 
-From one direction, AI creates entirely new possibilities in daily work: more automation, faster production, new ways to analyse, and eventually AI agents that can take over parts of the job. But that development has to live side by side with everything else already in motion: data projects, new CDP/warehouse initiatives, measurement improvements, attribution/MMM, new processes, new tools, new agency setups. AI is not a “reset” — it’s a new layer that has to fit into reality.
+From one direction, AI creates entirely new possibilities in daily work: more automation, faster production, new ways to analyse, and eventually AI agents that can take over parts of the job. But that development has to live side by side with everything else already in motion: data projects, new CDP/warehouse initiatives, measurement improvements, attribution/MMM, new processes, new tools, new agency setups. AI is not a "reset", it's a new layer that has to fit into reality.
 
-From the other direction comes AI search, and not least Agentic commerce. It’s a phenomenon that doesn’t just affect channel mix or creative formats, but can change how companies operate at the core — across product, revenue, and marketing. When discovery, research, and sometimes purchase move to new interfaces and new decision flows, it also affects the marketing operating model.
+From the other direction comes AI search, and not least Agentic commerce. It’s a phenomenon that doesn’t just affect channel mix or creative formats, but can change how companies operate at the core, across product, revenue, and marketing. When discovery, research, and sometimes purchase move to new interfaces and new decision flows, it also affects the marketing operating model.
 
 That’s why the CMO role becomes so central in this shift. The change is driven from two directions at once: internally (how AI changes ways of working, teams, cost structure, and quality) and externally (how AI search and agentic commerce move customer behavior and the rules of the game). And on top of that comes all the usual: transformation projects already in motion, pressured budgets, higher demands for impact, and an organisation that is often more siloed than you want to admit.
 
-That’s the reality I want to help with. I see many wrestling with the same pattern: enormous potential, but limited overview — and a daily reality that quickly gets more complex when new tools, new agents, and new ways of working need to fit in.
+That’s the reality I want to help with. I see many wrestling with the same pattern: enormous potential, but limited overview, and a daily reality that quickly gets more complex when new tools, new agents, and new ways of working need to fit in.
 
-Here I share ongoing questions & answers, reflections, and observations on the topic — as transparently as I can. This is too important to stay behind closed doors.`,
+Here I share ongoing questions & answers, reflections, and observations on the topic, as transparently as I can. This is too important to stay behind closed doors.`,
     readMore: 'Read more',
     readLess: 'Show less',
     author: 'Matilda Rydow',

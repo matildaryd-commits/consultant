@@ -40,7 +40,7 @@ export default function ContactThanks() {
 
     document.documentElement.lang = lang
     applyPageMeta({
-      title: lang === 'sv' ? 'Tack — Matilda Rydow' : 'Thank you — Matilda Rydow',
+      title: lang === 'sv' ? 'Tack | Matilda Rydow' : 'Thank you | Matilda Rydow',
       description,
       ogTitle: lang === 'sv' ? 'Tack' : 'Thank you',
       ogDescription: description,
