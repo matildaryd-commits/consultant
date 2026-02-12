@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Link as LinkIcon } from 'lucide-react'
-import { useLanguage } from '../hooks/useLanguage'
+import { useLanguage, getLocalizedPath } from '../hooks/useLanguage'
 import { faqs, faqCategories, generateFAQSchema, generatePersonSchema } from '../data/faq'
 import { applyPageMeta, setHreflangLinks } from '../utils/seo'
 
@@ -71,7 +71,7 @@ function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery }) {
 
   const copyLink = (e) => {
     e.stopPropagation()
-    const url = `${window.location.origin}/${lang}/fragor#${faq.id}`
+    const url = `${window.location.origin}${getLocalizedPath(lang, 'fragor')}#${faq.id}`
     navigator.clipboard.writeText(url)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
@@ -235,12 +235,12 @@ export default function Writing() {
       ogDescription: description,
       ogImage: `${origin}/matilda-portrait.jpg`,
       locale: lang === 'sv' ? 'sv_SE' : 'en_US',
-      canonical: `${origin}${basePath}/fragor`,
+      canonical: `${origin}${getLocalizedPath(lang, 'fragor')}`,
     })
 
     setHreflangLinks([
       { lang: 'sv', href: `${origin}/sv/fragor` },
-      { lang: 'en', href: `${origin}/en/fragor` },
+      { lang: 'en', href: `${origin}/en/faq` },
       { lang: 'x-default', href: `${origin}/sv/fragor` },
     ])
   }, [lang])
@@ -335,7 +335,7 @@ export default function Writing() {
     })
     // Update URL hash when opening
     if (!openItems.has(id)) {
-      window.history.replaceState(null, '', `/${lang}/fragor#${id}`)
+      window.history.replaceState(null, '', `${getLocalizedPath(lang, 'fragor')}#${id}`)
     }
   }
 

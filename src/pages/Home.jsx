@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
-import { useLanguage } from '../hooks/useLanguage'
+import { useLanguage, getLocalizedPath } from '../hooks/useLanguage'
 import { faqs } from '../data/faq'
 import { applyPageMeta, setHreflangLinks } from '../utils/seo'
 
@@ -118,7 +118,7 @@ export default function Home() {
                 {t.links.linkedin}
                 <ArrowUpRight size={14} />
               </a>
-              <Link to={`/${lang}/fragor`}>
+              <Link to={getLocalizedPath(lang, 'fragor')}>
                 {t.links.faq}
                 <ArrowRight size={14} />
               </Link>
@@ -141,7 +141,7 @@ export default function Home() {
                 <div className="now-item" key={item.id}>
                   <div className="now-item__label">{item.label}</div>
                   <div className="now-item__value">
-                    <Link to={`/${lang}/fragor#${item.id}`}>
+                    <Link to={`${getLocalizedPath(lang, 'fragor')}#${item.id}`}>
                       {question} <ArrowUpRight size={12} />
                     </Link>
                   </div>
@@ -156,7 +156,7 @@ export default function Home() {
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 'var(--space-8)' }}>
             <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 0 }}>{t.faq.title}</h2>
-            <Link to={`/${lang}/fragor`} className="btn btn--ghost">
+            <Link to={getLocalizedPath(lang, 'fragor')} className="btn btn--ghost">
               {t.faq.viewAll} <ArrowRight size={14} />
             </Link>
           </div>
@@ -173,7 +173,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <Link to={`/${lang}/fragor#${faq.id}`}>
+                  <Link to={`${getLocalizedPath(lang, 'fragor')}#${faq.id}`}>
                     <h3 className="writing-item__title">
                       {localized.question}
                     </h3>

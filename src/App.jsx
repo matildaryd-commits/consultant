@@ -24,10 +24,10 @@ export default function App() {
 
           <Route path="/en" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="fragor" element={<FAQ />} />
-            <Route path="om" element={<About />} />
-            <Route path="kontakt" element={<Contact />} />
-            <Route path="kontakt/tack" element={<ContactThanks />} />
+            <Route path="faq" element={<FAQ />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="contact/thanks" element={<ContactThanks />} />
           </Route>
 
           <Route path="/fragor" element={<Navigate to="/sv/fragor" replace />} />

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { useLanguage } from '../hooks/useLanguage'
+import { useLanguage, getLocalizedPath } from '../hooks/useLanguage'
 import { applyPageMeta, setHreflangLinks } from '../utils/seo'
 
 const content = {
@@ -46,12 +46,12 @@ export default function ContactThanks() {
       ogDescription: description,
       ogImage: `${origin}/matilda-portrait.jpg`,
       locale: lang === 'sv' ? 'sv_SE' : 'en_US',
-      canonical: `${origin}${basePath}/kontakt/tack`,
+      canonical: `${origin}${getLocalizedPath(lang, 'kontakt/tack')}`,
     })
 
     setHreflangLinks([
       { lang: 'sv', href: `${origin}/sv/kontakt/tack` },
-      { lang: 'en', href: `${origin}/en/kontakt/tack` },
+      { lang: 'en', href: `${origin}/en/contact/thanks` },
       { lang: 'x-default', href: `${origin}/sv/kontakt/tack` },
     ])
   }, [lang])
@@ -90,7 +90,7 @@ export default function ContactThanks() {
                 transition={{ delay: 0.4 + i * 0.1 }}
               >
                 {link.type === 'internal' ? (
-                  <Link to={`/${lang}/${link.href}`} className="thanks-link">
+                  <Link to={getLocalizedPath(lang, link.href)} className="thanks-link">
                     <span>{link.label}</span>
                     <ArrowRight size={16} />
                   </Link>

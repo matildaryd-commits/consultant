@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { ArrowUpRight, Play, Mic, FileText } from 'lucide-react'
-import { useLanguage } from '../hooks/useLanguage'
+import { useLanguage, getLocalizedPath } from '../hooks/useLanguage'
 import { applyPageMeta, setHreflangLinks } from '../utils/seo'
 import { generatePersonSchema } from '../data/faq'
 
@@ -144,12 +144,12 @@ export default function About() {
       ogDescription: description,
       ogImage: `${origin}/matilda-portrait.jpg`,
       locale: lang === 'sv' ? 'sv_SE' : 'en_US',
-      canonical: `${origin}${basePath}/om`,
+      canonical: `${origin}${getLocalizedPath(lang, 'om')}`,
     })
 
     setHreflangLinks([
       { lang: 'sv', href: `${origin}/sv/om` },
-      { lang: 'en', href: `${origin}/en/om` },
+      { lang: 'en', href: `${origin}/en/about` },
       { lang: 'x-default', href: `${origin}/sv/om` },
     ])
 

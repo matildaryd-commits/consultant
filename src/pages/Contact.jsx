@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Linkedin, ArrowUpRight } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useLanguage } from '../hooks/useLanguage'
+import { useLanguage, getLocalizedPath } from '../hooks/useLanguage'
 import { applyPageMeta, setHreflangLinks } from '../utils/seo'
 
 const content = {
@@ -62,12 +62,12 @@ export default function Contact() {
       ogDescription: description,
       ogImage: `${origin}/matilda-portrait.jpg`,
       locale: lang === 'sv' ? 'sv_SE' : 'en_US',
-      canonical: `${origin}${basePath}/kontakt`,
+      canonical: `${origin}${getLocalizedPath(lang, 'kontakt')}`,
     })
 
     setHreflangLinks([
       { lang: 'sv', href: `${origin}/sv/kontakt` },
-      { lang: 'en', href: `${origin}/en/kontakt` },
+      { lang: 'en', href: `${origin}/en/contact` },
       { lang: 'x-default', href: `${origin}/sv/kontakt` },
     ])
   }, [lang])
@@ -91,7 +91,7 @@ export default function Contact() {
         throw new Error('Form submit failed')
       }
 
-      navigate(`/${lang}/kontakt/tack`)
+      navigate(getLocalizedPath(lang, 'kontakt/tack'))
     } catch (error) {
       setSubmitError(
         lang === 'sv'

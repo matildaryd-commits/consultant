@@ -10,9 +10,9 @@ const navItems = {
     { path: '/kontakt', label: 'Kontakt' },
   ],
   en: [
-    { path: '/fragor', label: 'AI in Marketing' },
-    { path: '/om', label: 'About' },
-    { path: '/kontakt', label: 'Contact' },
+    { path: '/faq', label: 'AI in Marketing' },
+    { path: '/about', label: 'About' },
+    { path: '/contact', label: 'Contact' },
   ],
 }
 
