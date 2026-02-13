@@ -1,9 +1,7 @@
+'use client'
+
 import { motion } from 'framer-motion'
-import { useEffect } from 'react'
 import { ArrowUpRight, Play, Mic, FileText } from 'lucide-react'
-import { useLanguage, getLocalizedPath } from '../hooks/useLanguage'
-import { applyPageMeta, setHreflangLinks } from '../utils/seo'
-import { generatePersonSchema } from '../data/faq'
 
 const content = {
   sv: {
@@ -13,7 +11,6 @@ const content = {
     intro: `Jag jobbar med <strong>martech, data/analytics och AI</strong>. Jag hjälper team att bygga lösningar och arbetssätt som gör att data och AI faktiskt används: från <strong>mätning, datamodeller och arkitektur</strong> till <strong>produktbeslut, prioriteringar</strong> och hur <strong>AI‑agenter</strong> vävs in i flöden, ansvar och verktyg. Men tech är sällan hela svaret. Jag lägger lika mycket vikt vid det organisatoriska: <strong>tydliga roller, bra beslutsfattande</strong>, rimliga processer och samarbete som håller över tid. När tech och organisation drar åt samma håll händer det saker – och det är där jag brukar göra störst skillnad.
 
 Utöver att hjälpa bolag med martech, data/analytics och AI är jag ängelinvesterare. Tidigare har jag varit Group COO och VD på <strong>Precis</strong>, Martech Lead på Ving/Thomas Cook, och byggt Alvie (<strong>attribution/marketing intelligence</strong>) samt Wilgot (<strong>agentic commerce</strong>/GEO).`,
-    chapters: null,
     interests: {
       title: 'Vad jag tänker på',
       items: [
@@ -25,12 +22,7 @@ Utöver att hjälpa bolag med martech, data/analytics och AI är jag ängelinves
     },
     expertise: {
       title: 'Bolag jag har jobbat med',
-      items: [
-        'E‑handlare',
-        'SaaS',
-        'B2B',
-        'App‑bolag',
-      ],
+      items: ['E‑handlare', 'SaaS', 'B2B', 'App‑bolag'],
     },
     media: {
       title: 'I media',
@@ -66,13 +58,12 @@ Utöver att hjälpa bolag med martech, data/analytics och AI är jag ängelinves
     },
   },
   en: {
-    title: 'Hi, I’m Matilda',
+    title: "Hi, I'm Matilda",
     subtitle: 'Advisor in martech, data/analytics, and AI, with a focus on both tech and organization.',
     portraitAlt: 'Portrait of Matilda Rydow',
     intro: `I work with <strong>martech, data/analytics, and AI</strong>. I help teams build solutions and ways of working that make data and AI actually used: from <strong>measurement, data models, and architecture</strong> to <strong>product decisions and priorities</strong>, and how <strong>AI agents</strong> are embedded in flows, ownership, and tools. But tech is rarely the whole answer. I put equal weight on the organizational side: <strong>clear roles and solid decision‑making</strong>, reasonable processes, and collaboration that holds up over time. When tech and organization pull in the same direction, things happen. That's where I tend to make the biggest difference.
 
-Beyond helping companies with martech, data/analytics, and AI, I’m an angel investor. Previously I was Group COO and CEO at <strong>Precis</strong>, Martech Lead at Ving/Thomas Cook, and built Alvie (<strong>attribution/marketing intelligence</strong>) and Wilgot (<strong>agentic commerce</strong>/GEO).`,
-    chapters: null,
+Beyond helping companies with martech, data/analytics, and AI, I'm an angel investor. Previously I was Group COO and CEO at <strong>Precis</strong>, Martech Lead at Ving/Thomas Cook, and built Alvie (<strong>attribution/marketing intelligence</strong>) and Wilgot (<strong>agentic commerce</strong>/GEO).`,
     interests: {
       title: 'What I think about',
       items: [
@@ -84,12 +75,7 @@ Beyond helping companies with martech, data/analytics, and AI, I’m an angel in
     },
     expertise: {
       title: 'Company types',
-      items: [
-        'E‑commerce',
-        'SaaS',
-        'B2B',
-        'App businesses',
-      ],
+      items: ['E‑commerce', 'SaaS', 'B2B', 'App businesses'],
     },
     media: {
       title: 'In media',
@@ -126,42 +112,8 @@ Beyond helping companies with martech, data/analytics, and AI, I’m an angel in
   },
 }
 
-export default function About() {
-  const { lang } = useLanguage()
+export default function AboutClient({ lang }) {
   const t = content[lang]
-  useEffect(() => {
-    const origin = 'https://matildarydow.com'
-    const basePath = lang === 'sv' ? '/sv' : '/en'
-    const description = lang === 'sv'
-      ? 'Matilda Rydow – AI-rådgivare inom martech, data/analytics och AI-agenter. Fd Group COO på Precis, byggde Alvie och Wilgot. Hjälper e-handel, SaaS och B2B.'
-      : 'Matilda Rydow – AI advisor specializing in martech, data/analytics, and AI agents. Former Group COO at Precis, built Alvie and Wilgot. Helping e-commerce, SaaS, and B2B.'
-
-    document.documentElement.lang = lang
-    applyPageMeta({
-      title: lang === 'sv' ? 'Om mig | Matilda Rydow' : 'About | Matilda Rydow',
-      description,
-      ogTitle: lang === 'sv' ? 'Hej, jag heter Matilda' : 'Hi, I’m Matilda',
-      ogDescription: description,
-      ogImage: `${origin}/matilda-portrait.jpg`,
-      locale: lang === 'sv' ? 'sv_SE' : 'en_US',
-      canonical: `${origin}${getLocalizedPath(lang, 'om')}`,
-    })
-
-    setHreflangLinks([
-      { lang: 'sv', href: `${origin}/sv/om` },
-      { lang: 'en', href: `${origin}/en/about` },
-      { lang: 'x-default', href: `${origin}/sv/om` },
-    ])
-
-    const existing = document.getElementById('person-schema')
-    if (!existing) {
-      const script = document.createElement('script')
-      script.type = 'application/ld+json'
-      script.id = 'person-schema'
-      script.textContent = JSON.stringify(generatePersonSchema())
-      document.head.appendChild(script)
-    }
-  }, [lang])
 
   return (
     <section className="section">
@@ -193,35 +145,6 @@ export default function About() {
             </div>
           </div>
         </motion.div>
-
-        {t.chapters ? (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            <div className="label mb-8">{t.chapters.title}</div>
-
-            {t.chapters.items.map((item, i) => (
-              <motion.div
-                key={item.period}
-                className="career-chapter"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + i * 0.1 }}
-              >
-                <div className="career-chapter__period">{item.period}</div>
-                <div>
-                  <div className="career-chapter__role">{item.role}</div>
-                  {item.company && (
-                    <div className="career-chapter__company">{item.company}</div>
-                  )}
-                  <p className="career-chapter__text">{item.text}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        ) : null}
 
         <motion.div
           initial={{ opacity: 0 }}

@@ -1,10 +1,9 @@
+'use client'
+
 import { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Link as LinkIcon } from 'lucide-react'
-import { useLanguage, getLocalizedPath } from '../hooks/useLanguage'
-import { faqs, faqCategories, generateFAQSchema, generatePersonSchema, getFaqId, findFaqById } from '../data/faq'
-import { applyPageMeta, setHreflangLinks } from '../utils/seo'
+import { faqs, faqCategories, getFaqId, findFaqById } from '../data/faq'
 
 const content = {
   sv: {
@@ -28,51 +27,51 @@ Här delar jag löpande frågor & svar, reflektioner och spaningar på ämnet �
     readMore: 'Läs mer',
     readLess: 'Visa mindre',
     author: 'Matilda Rydow',
-    authorTitle: 'AI Advisor & Consultant',
     filterAll: 'Alla',
     searchPlaceholder: 'Sök i frågor och svar',
     searchClear: 'Rensa',
     copyLink: 'Kopiera länk',
     linkCopied: 'Länk kopierad!',
+    faqPath: '/sv/fragor',
   },
   en: {
     title: 'Q&A on AI in Marketing',
     subtitle: 'Perspectives & Reflections',
-    introFull: `It’s an exciting time right now for most companies and functions. But marketing, CRM, and e‑com/web have a very particular challenge ahead.
+    introFull: `It's an exciting time right now for most companies and functions. But marketing, CRM, and e‑com/web have a very particular challenge ahead.
 
-I’ve spent the last ten years deeply involved in digital marketing, especially the nerdy part: how companies build competitive advantage through smart use of data. It has been a long journey for many, and the work is still very much ongoing.
+I've spent the last ten years deeply involved in digital marketing, especially the nerdy part: how companies build competitive advantage through smart use of data. It has been a long journey for many, and the work is still very much ongoing.
 
 Now AI enters and makes everything… both easier and harder.
 
 From one direction, AI creates entirely new possibilities in daily work: more automation, faster production, new ways to analyse, and eventually AI agents that can take over parts of the job. But that development has to live side by side with everything else already in motion: data projects, new CDP/warehouse initiatives, measurement improvements, attribution/MMM, new processes, new tools, new agency setups. AI is not a "reset", it's a new layer that has to fit into reality.
 
-From the other direction comes AI search, and not least Agentic commerce. It’s a phenomenon that doesn’t just affect channel mix or creative formats, but can change how companies operate at the core, across product, revenue, and marketing. When discovery, research, and sometimes purchase move to new interfaces and new decision flows, it also affects the marketing operating model.
+From the other direction comes AI search, and not least Agentic commerce. It's a phenomenon that doesn't just affect channel mix or creative formats, but can change how companies operate at the core, across product, revenue, and marketing. When discovery, research, and sometimes purchase move to new interfaces and new decision flows, it also affects the marketing operating model.
 
-That’s why the CMO role becomes so central in this shift. The change is driven from two directions at once: internally (how AI changes ways of working, teams, cost structure, and quality) and externally (how AI search and agentic commerce move customer behavior and the rules of the game). And on top of that comes all the usual: transformation projects already in motion, pressured budgets, higher demands for impact, and an organisation that is often more siloed than you want to admit.
+That's why the CMO role becomes so central in this shift. The change is driven from two directions at once: internally (how AI changes ways of working, teams, cost structure, and quality) and externally (how AI search and agentic commerce move customer behavior and the rules of the game). And on top of that comes all the usual: transformation projects already in motion, pressured budgets, higher demands for impact, and an organisation that is often more siloed than you want to admit.
 
-That’s the reality I want to help with. I see many wrestling with the same pattern: enormous potential, but limited overview, and a daily reality that quickly gets more complex when new tools, new agents, and new ways of working need to fit in.
+That's the reality I want to help with. I see many wrestling with the same pattern: enormous potential, but limited overview, and a daily reality that quickly gets more complex when new tools, new agents, and new ways of working need to fit in.
 
 Here I share ongoing questions & answers, reflections, and observations on the topic, as transparently as I can. This is too important to stay behind closed doors.`,
     readMore: 'Read more',
     readLess: 'Show less',
     author: 'Matilda Rydow',
-    authorTitle: 'AI Advisor & Consultant',
     filterAll: 'All',
     searchPlaceholder: 'Search questions and answers',
     searchClear: 'Clear',
     copyLink: 'Copy link',
     linkCopied: 'Link copied!',
+    faqPath: '/en/faq',
   },
 }
 
-function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery }) {
+function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery, faqPath }) {
   const localized = faq[lang]
   const [copied, setCopied] = useState(false)
   const faqId = getFaqId(faq, lang)
 
   const copyLink = (e) => {
     e.stopPropagation()
-    const url = `${window.location.origin}${getLocalizedPath(lang, 'fragor')}#${faqId}`
+    const url = `${window.location.origin}${faqPath}#${faqId}`
     navigator.clipboard.writeText(url)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
@@ -212,57 +211,21 @@ function normalizeText(value) {
     .replace(/[\u0300-\u036f]/g, '')
 }
 
-export default function Writing() {
-  const { lang } = useLanguage()
+export default function FAQClient({ lang }) {
   const t = content[lang]
-  const location = useLocation()
   const [openItems, setOpenItems] = useState(new Set())
   const [activeCategory, setActiveCategory] = useState('all')
   const [searchQuery, setSearchQuery] = useState('')
   const [introExpanded, setIntroExpanded] = useState(false)
 
+  // Handle anchor links from URL hash
   useEffect(() => {
-    const origin = 'https://matildarydow.com'
-    const basePath = lang === 'sv' ? '/sv' : '/en'
-    const description = lang === 'sv'
-      ? 'Expertguide om AI i marknadsföring: organisation, AI-agenter, agentic commerce, byråsamarbeten och mätning. Frågor & svar från Matilda Rydow.'
-      : 'Expert guide on AI in marketing: organization, AI agents, agentic commerce, agency collaboration, and measurement. Q&A from Matilda Rydow.'
-
-    document.documentElement.lang = lang
-    applyPageMeta({
-      title: lang === 'sv' ? 'Guide: AI i Marknadsföring – Frågor & Svar | Matilda Rydow' : 'Guide: AI in Marketing – Q&A | Matilda Rydow',
-      description,
-      ogTitle: lang === 'sv' ? 'Guide: AI i Marknadsföring' : 'Guide: AI in Marketing',
-      ogDescription: description,
-      ogImage: `${origin}/matilda-portrait.jpg`,
-      locale: lang === 'sv' ? 'sv_SE' : 'en_US',
-      canonical: `${origin}${getLocalizedPath(lang, 'fragor')}`,
-    })
-
-    setHreflangLinks([
-      { lang: 'sv', href: `${origin}/sv/fragor` },
-      { lang: 'en', href: `${origin}/en/faq` },
-      { lang: 'x-default', href: `${origin}/sv/fragor` },
-    ])
-  }, [lang])
-
-  useEffect(() => {
-    if (!location.hash) {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-  }, [location.pathname, location.hash])
-
-  // Handle anchor links - open the FAQ item if there's a hash in the URL
-  useEffect(() => {
-    const hash = location.hash.slice(1) // Remove the #
+    const hash = window.location.hash.slice(1)
     if (hash) {
-      // Find FAQ by either Swedish id or English enId
       const faq = findFaqById(hash)
       if (faq) {
-        setOpenItems(new Set([faq.id])) // Always track by internal Swedish id
-        // Scroll to the element after a short delay to let it render
+        setOpenItems(new Set([faq.id]))
         setTimeout(() => {
-          // Element uses language-specific ID
           const faqId = getFaqId(faq, lang)
           const element = document.getElementById(faqId)
           if (element) {
@@ -270,60 +233,6 @@ export default function Writing() {
           }
         }, 100)
       }
-    }
-  }, [location.hash, lang])
-
-  // Inject JSON-LD schemas on mount
-  useEffect(() => {
-    const baseUrl = 'https://matildarydow.com'
-
-    // FAQ Schema
-    const faqSchema = document.createElement('script')
-    faqSchema.type = 'application/ld+json'
-    faqSchema.id = 'faq-schema'
-    faqSchema.textContent = JSON.stringify(generateFAQSchema(faqs, lang))
-
-    // Person Schema
-    const personSchema = document.createElement('script')
-    personSchema.type = 'application/ld+json'
-    personSchema.id = 'person-schema'
-    personSchema.textContent = JSON.stringify(generatePersonSchema())
-
-    // Breadcrumb Schema for navigation
-    const breadcrumbSchema = document.createElement('script')
-    breadcrumbSchema.type = 'application/ld+json'
-    breadcrumbSchema.id = 'breadcrumb-schema'
-    breadcrumbSchema.textContent = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: lang === 'sv' ? 'Hem' : 'Home',
-          item: `${baseUrl}/${lang}`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: lang === 'sv' ? 'Frågor & Svar' : 'Q&A',
-          item: `${baseUrl}${getLocalizedPath(lang, 'fragor')}`,
-        },
-      ],
-    })
-
-    // Remove old schemas and add new ones
-    document.getElementById('faq-schema')?.remove()
-    document.getElementById('person-schema')?.remove()
-    document.getElementById('breadcrumb-schema')?.remove()
-    document.head.appendChild(faqSchema)
-    document.head.appendChild(personSchema)
-    document.head.appendChild(breadcrumbSchema)
-
-    return () => {
-      document.getElementById('faq-schema')?.remove()
-      document.getElementById('person-schema')?.remove()
-      document.getElementById('breadcrumb-schema')?.remove()
     }
   }, [lang])
 
@@ -337,12 +246,11 @@ export default function Writing() {
       }
       return next
     })
-    // Update URL hash when opening (use language-specific ID)
     if (!openItems.has(internalId)) {
       const faq = faqs.find(f => f.id === internalId)
       if (faq) {
         const faqId = getFaqId(faq, lang)
-        window.history.replaceState(null, '', `${getLocalizedPath(lang, 'fragor')}#${faqId}`)
+        window.history.replaceState(null, '', `${t.faqPath}#${faqId}`)
       }
     }
   }
@@ -460,6 +368,7 @@ export default function Writing() {
               onToggle={() => toggleItem(faq.id)}
               index={index}
               searchQuery={searchQuery}
+              faqPath={t.faqPath}
             />
           ))}
         </div>

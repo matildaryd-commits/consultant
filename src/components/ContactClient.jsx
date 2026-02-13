@@ -1,9 +1,9 @@
+'use client'
+
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Linkedin, ArrowUpRight } from 'lucide-react'
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useLanguage, getLocalizedPath } from '../hooks/useLanguage'
-import { applyPageMeta, setHreflangLinks } from '../utils/seo'
 
 const content = {
   sv: {
@@ -15,12 +15,15 @@ const content = {
       email: 'E‑post',
       message: 'Meddelande',
       submit: 'Skicka',
+      submitting: 'Skickar…',
     },
     linkedin: {
       label: 'LinkedIn',
       value: 'Säg gärna hej på LinkedIn!',
     },
     or: 'eller',
+    error: 'Det gick inte att skicka. Försök igen om en stund.',
+    thanksPath: '/sv/kontakt/tack',
   },
   en: {
     title: 'Contact',
@@ -31,46 +34,23 @@ const content = {
       email: 'Email',
       message: 'Message',
       submit: 'Send',
+      submitting: 'Sending…',
     },
     linkedin: {
       label: 'LinkedIn',
       value: 'Follow or send a message',
     },
     or: 'or',
+    error: 'Could not send. Please try again in a moment.',
+    thanksPath: '/en/contact/thanks',
   },
 }
 
-export default function Contact() {
-  const { lang } = useLanguage()
+export default function ContactClient({ lang }) {
   const t = content[lang]
-  const navigate = useNavigate()
+  const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState('')
-
-  useEffect(() => {
-    const origin = 'https://matildarydow.com'
-    const basePath = lang === 'sv' ? '/sv' : '/en'
-    const description = lang === 'sv'
-      ? 'Boka AI-rådgivning, workshop eller föreläsning med Matilda Rydow. Expertis inom martech, data/analytics och AI för marknadsavdelningar.'
-      : 'Book AI consulting, workshop, or speaking with Matilda Rydow. Expertise in martech, data/analytics, and AI for marketing teams.'
-
-    document.documentElement.lang = lang
-    applyPageMeta({
-      title: lang === 'sv' ? 'Boka AI-rådgivning eller Föreläsning | Matilda Rydow' : 'Book AI Consulting or Speaking | Matilda Rydow',
-      description,
-      ogTitle: lang === 'sv' ? 'Boka AI-rådgivning eller Föreläsning' : 'Book AI Consulting or Speaking',
-      ogDescription: description,
-      ogImage: `${origin}/matilda-portrait.jpg`,
-      locale: lang === 'sv' ? 'sv_SE' : 'en_US',
-      canonical: `${origin}${getLocalizedPath(lang, 'kontakt')}`,
-    })
-
-    setHreflangLinks([
-      { lang: 'sv', href: `${origin}/sv/kontakt` },
-      { lang: 'en', href: `${origin}/en/contact` },
-      { lang: 'x-default', href: `${origin}/sv/kontakt` },
-    ])
-  }, [lang])
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -91,13 +71,9 @@ export default function Contact() {
         throw new Error('Form submit failed')
       }
 
-      navigate(getLocalizedPath(lang, 'kontakt/tack'))
+      router.push(t.thanksPath)
     } catch (error) {
-      setSubmitError(
-        lang === 'sv'
-          ? 'Det gick inte att skicka. Försök igen om en stund.'
-          : 'Could not send. Please try again in a moment.'
-      )
+      setSubmitError(t.error)
     } finally {
       setIsSubmitting(false)
     }
@@ -163,7 +139,7 @@ export default function Contact() {
 
               <div className="contact-form__actions">
                 <button type="submit" className="contact-form__submit" disabled={isSubmitting}>
-                  {isSubmitting ? (lang === 'sv' ? 'Skickar…' : 'Sending…') : t.form.submit}
+                  {isSubmitting ? t.form.submitting : t.form.submit}
                 </button>
                 {submitError ? (
                   <span className="contact-form__error">{submitError}</span>
@@ -192,7 +168,6 @@ export default function Contact() {
             </div>
           </a>
         </motion.div>
-
       </div>
     </section>
   )

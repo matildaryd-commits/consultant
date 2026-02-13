@@ -1,49 +1,70 @@
-import { useState, useEffect } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+'use client'
+
+import { useState } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
-import { useLanguage } from '../hooks/useLanguage'
 
 const navItems = {
   sv: [
-    { path: '/fragor', label: 'AI i Marketing' },
-    { path: '/om', label: 'Om' },
-    { path: '/kontakt', label: 'Kontakt' },
+    { path: '/sv/fragor', label: 'AI i Marketing' },
+    { path: '/sv/om', label: 'Om' },
+    { path: '/sv/kontakt', label: 'Kontakt' },
   ],
   en: [
-    { path: '/faq', label: 'AI in Marketing' },
-    { path: '/about', label: 'About' },
-    { path: '/contact', label: 'Contact' },
+    { path: '/en/faq', label: 'AI in Marketing' },
+    { path: '/en/about', label: 'About' },
+    { path: '/en/contact', label: 'Contact' },
   ],
 }
 
-export default function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const { lang, toggleLang } = useLanguage()
-  const basePath = `/${lang}`
+// Route mapping for language switching
+const routeMap = {
+  '/sv': '/en',
+  '/sv/fragor': '/en/faq',
+  '/sv/om': '/en/about',
+  '/sv/kontakt': '/en/contact',
+  '/sv/kontakt/tack': '/en/contact/thanks',
+  '/en': '/sv',
+  '/en/faq': '/sv/fragor',
+  '/en/about': '/sv/om',
+  '/en/contact': '/sv/kontakt',
+  '/en/contact/thanks': '/sv/kontakt/tack',
+}
 
+export default function Header({ lang }) {
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
+  const basePath = `/${lang}`
   const items = navItems[lang]
+
+  const getOtherLangPath = () => {
+    return routeMap[pathname] || (lang === 'sv' ? '/en' : '/sv')
+  }
+
+  const isActive = (path) => pathname === path
 
   return (
     <>
       <header className="header">
         <div className="header__inner">
-          <Link to={basePath} className="header__name">
+          <Link href={basePath} className="header__name">
             Matilda Rydow
           </Link>
 
           <nav className="header__nav">
             {items.map((item) => (
-              <NavLink
+              <Link
                 key={item.path}
-                to={`${basePath}${item.path}`}
-                className={({ isActive }) => (isActive ? 'active' : '')}
+                href={item.path}
+                className={isActive(item.path) ? 'active' : ''}
               >
                 {item.label}
-              </NavLink>
+              </Link>
             ))}
-            <button className="header__lang" onClick={toggleLang}>
-              {lang.toUpperCase()}
-            </button>
+            <Link href={getOtherLangPath()} className="header__lang">
+              {lang === 'sv' ? 'EN' : 'SV'}
+            </Link>
           </nav>
 
           <button
@@ -58,21 +79,21 @@ export default function Header() {
 
       <nav className={`mobile-nav ${mobileOpen ? 'open' : ''}`}>
         {items.map((item) => (
-          <NavLink
+          <Link
             key={item.path}
-            to={`${basePath}${item.path}`}
+            href={item.path}
             onClick={() => setMobileOpen(false)}
           >
             {item.label}
-          </NavLink>
+          </Link>
         ))}
-        <button
+        <Link
+          href={getOtherLangPath()}
           className="header__lang"
-          onClick={toggleLang}
           style={{ marginTop: 'var(--space-8)' }}
         >
           {lang === 'sv' ? 'EN' : 'SV'}
-        </button>
+        </Link>
       </nav>
     </>
   )

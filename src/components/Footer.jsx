@@ -1,8 +1,4 @@
-import { useLanguage } from '../hooks/useLanguage'
-
-export default function Footer() {
-  const { lang } = useLanguage()
-
+export default function Footer({ lang }) {
   return (
     <footer className="footer">
       <div className="container">

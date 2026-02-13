@@ -1,11 +1,9 @@
-import { Link } from 'react-router-dom'
+'use client'
+
+import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useEffect } from 'react'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
-import { useLanguage, getLocalizedPath } from '../hooks/useLanguage'
-import { getFaqId } from '../data/faq'
-import { faqs } from '../data/faq'
-import { applyPageMeta, setHreflangLinks } from '../utils/seo'
+import { faqs, getFaqId } from '../data/faq'
 
 const content = {
   sv: {
@@ -27,6 +25,7 @@ const content = {
       title: 'Vanliga frågor',
       viewAll: 'Alla frågor',
     },
+    faqPath: '/sv/fragor',
   },
   en: {
     greeting: "Hi, I'm Matilda.",
@@ -47,18 +46,17 @@ const content = {
       title: 'Common questions',
       viewAll: 'All questions',
     },
+    faqPath: '/en/faq',
   },
 }
 
-// Featured questions to show on homepage
 const featuredFaqIds = [
   'organisera-marknadsavdelning',
   'agentic-commerce-vad-ar',
   'byra-samarbete-minska-kommunikation',
 ]
 
-export default function Home() {
-  const { lang } = useLanguage()
+export default function HomeClient({ lang }) {
   const t = content[lang]
   const featuredFaqs = faqs.filter(faq => featuredFaqIds.includes(faq.id))
   const faqById = Object.fromEntries(faqs.map(faq => [faq.id, faq]))
@@ -67,31 +65,6 @@ export default function Home() {
     { label: t.now.thinking.label, id: 'agentic-commerce-vad-ar' },
     { label: t.now.reading.label, id: 'undvik-spretiga-ai-initiativ' },
   ]
-
-  useEffect(() => {
-    const origin = 'https://matildarydow.com'
-    const basePath = lang === 'sv' ? '/sv' : '/en'
-    const description = lang === 'sv'
-      ? 'AI-konsult som hjälper CMO:er och marknadsavdelningar med martech, data/analytics och AI-agenter. Fd Group COO på Precis. Boka rådgivning.'
-      : 'AI consultant helping CMOs and marketing teams with martech, data/analytics, and AI agents. Former Group COO at Precis. Book a consultation.'
-
-    document.documentElement.lang = lang
-    applyPageMeta({
-      title: lang === 'sv' ? 'AI-konsult för Marknadsföring & Data | Matilda Rydow' : 'AI Consultant for Marketing & Data | Matilda Rydow',
-      description,
-      ogTitle: lang === 'sv' ? 'AI-konsult för Marknadsföring & Data' : 'AI Consultant for Marketing & Data',
-      ogDescription: description,
-      ogImage: `${origin}/matilda-portrait.jpg`,
-      locale: lang === 'sv' ? 'sv_SE' : 'en_US',
-      canonical: `${origin}${basePath}/`,
-    })
-
-    setHreflangLinks([
-      { lang: 'sv', href: `${origin}/sv/` },
-      { lang: 'en', href: `${origin}/en/` },
-      { lang: 'x-default', href: `${origin}/sv/` },
-    ])
-  }, [lang])
 
   return (
     <>
@@ -119,7 +92,7 @@ export default function Home() {
                 {t.links.linkedin}
                 <ArrowUpRight size={14} />
               </a>
-              <Link to={getLocalizedPath(lang, 'fragor')}>
+              <Link href={t.faqPath}>
                 {t.links.faq}
                 <ArrowRight size={14} />
               </Link>
@@ -144,7 +117,7 @@ export default function Home() {
                 <div className="now-item" key={item.id}>
                   <div className="now-item__label">{item.label}</div>
                   <div className="now-item__value">
-                    <Link to={`${getLocalizedPath(lang, 'fragor')}#${faqId}`}>
+                    <Link href={`${t.faqPath}#${faqId}`}>
                       {question} <ArrowUpRight size={12} />
                     </Link>
                   </div>
@@ -159,7 +132,7 @@ export default function Home() {
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 'var(--space-8)' }}>
             <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 0 }}>{t.faq.title}</h2>
-            <Link to={getLocalizedPath(lang, 'fragor')} className="btn btn--ghost">
+            <Link href={t.faqPath} className="btn btn--ghost">
               {t.faq.viewAll} <ArrowRight size={14} />
             </Link>
           </div>
@@ -176,7 +149,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <Link to={`${getLocalizedPath(lang, 'fragor')}#${getFaqId(faq, lang)}`}>
+                  <Link href={`${t.faqPath}#${getFaqId(faq, lang)}`}>
                     <h3 className="writing-item__title">
                       {localized.question}
                     </h3>
