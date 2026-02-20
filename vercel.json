@@ -2,6 +2,14 @@
   "buildCommand": "npm run build",
   "outputDirectory": "out",
   "redirects": [
-    { "source": "/", "destination": "/sv/", "permanent": false }
+    { "source": "/", "destination": "/sv/", "permanent": false },
+    { "source": "/sv", "destination": "/sv/", "permanent": true },
+    { "source": "/en", "destination": "/en/", "permanent": true },
+    { "source": "/sv/fragor", "destination": "/sv/fragor/", "permanent": true },
+    { "source": "/en/faq", "destination": "/en/faq/", "permanent": true },
+    { "source": "/sv/om", "destination": "/sv/om/", "permanent": true },
+    { "source": "/en/about", "destination": "/en/about/", "permanent": true },
+    { "source": "/sv/kontakt", "destination": "/sv/kontakt/", "permanent": true },
+    { "source": "/en/contact", "destination": "/en/contact/", "permanent": true }
   ]
 }
