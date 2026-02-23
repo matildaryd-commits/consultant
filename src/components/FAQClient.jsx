@@ -83,9 +83,6 @@ function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery, faqPath }) {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05, duration: 0.3 }}
-      itemScope
-      itemProp="mainEntity"
-      itemType="https://schema.org/Question"
     >
       <button
         className={`faq-item__question ${isOpen ? 'faq-item__question--open' : ''}`}
@@ -93,7 +90,7 @@ function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery, faqPath }) {
         aria-expanded={isOpen}
         aria-controls={`faq-answer-${faqId}`}
       >
-        <h2 id={faqId} itemProp="name">{localized.question}</h2>
+        <h2 id={faqId}>{localized.question}</h2>
         <div className="faq-item__actions">
           <span
             className="faq-item__copy"
@@ -118,9 +115,6 @@ function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery, faqPath }) {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            itemScope
-            itemProp="acceptedAnswer"
-            itemType="https://schema.org/Answer"
           >
             <div className="faq-item__tags">
               {faq.categories.map(catId => {
@@ -132,7 +126,6 @@ function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery, faqPath }) {
             </div>
             <div
               className="faq-item__content"
-              itemProp="text"
               dangerouslySetInnerHTML={{
                 __html: formatAnswer(localized.answer, searchQuery)
               }}
@@ -271,8 +264,6 @@ export default function FAQClient({ lang }) {
   return (
     <section
       className="section"
-      itemScope
-      itemType="https://schema.org/FAQPage"
     >
       <div className="container container--prose">
         <motion.header

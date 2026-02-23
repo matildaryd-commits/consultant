@@ -85,9 +85,8 @@ export default function SvFAQPage() {
       />
 
       {/* Static content for SEO/LLM - ALL FAQ content is visible in HTML source */}
+      {/* Note: Schema is handled via JSON-LD above, no microdata needed */}
       <article
-        itemScope
-        itemType="https://schema.org/FAQPage"
         className="sr-only"
         aria-label="FAQ content for search engines"
       >
@@ -111,21 +110,12 @@ export default function SvFAQPage() {
           <article
             key={faq.id}
             id={`static-${faq.id}`}
-            itemScope
-            itemProp="mainEntity"
-            itemType="https://schema.org/Question"
           >
-            <h2 id={faq.id} itemProp="name">{faq.sv.question}</h2>
-            <div
-              itemScope
-              itemProp="acceptedAnswer"
-              itemType="https://schema.org/Answer"
-            >
-              <div itemProp="text">
-                {faq.sv.answer.split('\n\n').map((paragraph, i) => (
-                  <p key={i}>{paragraph.replace(/\*\*/g, '')}</p>
-                ))}
-              </div>
+            <h3 id={faq.id}>{faq.sv.question}</h3>
+            <div>
+              {faq.sv.answer.split('\n\n').map((paragraph, i) => (
+                <p key={i}>{paragraph.replace(/\*\*/g, '')}</p>
+              ))}
             </div>
             <footer>
               <p>Kategorier: {faq.categories.map(catId => {
