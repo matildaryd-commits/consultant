@@ -1574,6 +1574,8 @@ a:hover {
   border: none;
   cursor: pointer;
   text-align: left;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .faq-item__question h2 {
@@ -1584,8 +1586,10 @@ a:hover {
   transition: color var(--transition-fast);
 }
 
-.faq-item__question:hover h2 {
-  color: var(--accent);
+@media (hover: hover) {
+  .faq-item__question:hover h2 {
+    color: var(--accent);
+  }
 }
 
 .faq-item__actions {
@@ -1603,12 +1607,14 @@ a:hover {
   transition: all var(--transition-fast);
 }
 
-.faq-item__question:hover .faq-item__copy {
-  opacity: 1;
-}
+@media (hover: hover) {
+  .faq-item__question:hover .faq-item__copy {
+    opacity: 1;
+  }
 
-.faq-item__copy:hover {
-  color: var(--accent);
+  .faq-item__copy:hover {
+    color: var(--accent);
+  }
 }
 
 .faq-item__icon {

@@ -117,7 +117,7 @@ export default function HomeClient({ lang }) {
                 <div className="now-item" key={item.id}>
                   <div className="now-item__label">{item.label}</div>
                   <div className="now-item__value">
-                    <Link href={`${t.faqPath}#${faqId}`}>
+                    <Link href={`${t.faqPath}/${faqId}/`}>
                       {question} <ArrowUpRight size={12} />
                     </Link>
                   </div>
@@ -149,7 +149,7 @@ export default function HomeClient({ lang }) {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <Link href={`${t.faqPath}#${getFaqId(faq, lang)}`}>
+                  <Link href={`${t.faqPath}/${getFaqId(faq, lang)}/`}>
                     <h3 className="writing-item__title">
                       {localized.question}
                     </h3>
