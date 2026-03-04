@@ -854,6 +854,60 @@ export function getFaqId(faq, lang) {
   return faq.id
 }
 
+// Helper to get related FAQs (same category, excluding the current FAQ)
+export function getRelatedFaqs(faqId, limit = 3) {
+  const currentFaq = findFaqById(faqId)
+  if (!currentFaq) return []
+
+  const related = faqs
+    .filter(faq => faq.id !== currentFaq.id)
+    .filter(faq => faq.categories.some(cat => currentFaq.categories.includes(cat)))
+    .slice(0, limit)
+
+  return related
+}
+
+// Helper to generate metadata for individual FAQ pages
+export function generateFaqMetadata(faq, lang) {
+  const baseUrl = 'https://matildarydow.com'
+  const slug = getFaqId(faq, lang)
+  const pagePath = lang === 'sv' ? `/sv/fragor/${slug}` : `/en/faq/${slug}`
+  const altPath = lang === 'sv' ? `/en/faq/${faq.enId || faq.id}` : `/sv/fragor/${faq.id}`
+
+  const question = faq[lang].question
+  const answer = faq[lang].answer.replace(/\*\*/g, '').replace(/\n/g, ' ').trim()
+  const description = answer.length > 155 ? answer.substring(0, 152) + '...' : answer
+
+  return {
+    title: `${question} | Matilda Rydow`,
+    description,
+    authors: [{ name: 'Matilda Rydow' }],
+    openGraph: {
+      title: question,
+      description,
+      url: `${baseUrl}${pagePath}`,
+      siteName: 'Matilda Rydow',
+      locale: lang === 'sv' ? 'sv_SE' : 'en_US',
+      type: 'article',
+      images: [{ url: `${baseUrl}/matilda-portrait.jpg` }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${question} | Matilda Rydow`,
+      description,
+      images: [`${baseUrl}/matilda-portrait.jpg`],
+    },
+    alternates: {
+      canonical: `${baseUrl}${pagePath}`,
+      languages: {
+        'sv': `${baseUrl}/sv/fragor/${faq.id}`,
+        'en': `${baseUrl}/en/faq/${faq.enId || faq.id}`,
+        'x-default': `${baseUrl}/sv/fragor/${faq.id}`,
+      },
+    },
+  }
+}
+
 // Helper to find FAQ by ID (works with both sv and en IDs)
 export function findFaqById(id) {
   return faqs.find(faq => faq.id === id || faq.enId === id)

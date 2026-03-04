@@ -20,7 +20,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Frågor / FAQ -->
+  <!-- Frågor / FAQ - Översikt -->
   <url>
     <loc>https://www.matildarydow.com/sv/fragor/</loc>
     <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/" />
@@ -36,6 +36,415 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Individuella FAQ-sidor -->
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/organisera-marknadsavdelning/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/organisera-marknadsavdelning/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/organize-marketing-department/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/organisera-marknadsavdelning/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/organize-marketing-department/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/organisera-marknadsavdelning/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/organize-marketing-department/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/organisera-marknadsavdelning/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/agentic-commerce-vad-ar/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/agentic-commerce-vad-ar/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/what-is-agentic-commerce/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/agentic-commerce-vad-ar/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/what-is-agentic-commerce/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/agentic-commerce-vad-ar/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/what-is-agentic-commerce/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/agentic-commerce-vad-ar/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/modern-funnel-ny-lojal/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/modern-funnel-ny-lojal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/modern-funnel-new-loyal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/modern-funnel-ny-lojal/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/modern-funnel-new-loyal/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/modern-funnel-ny-lojal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/modern-funnel-new-loyal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/modern-funnel-ny-lojal/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/cro-flyttar-fran-storefront/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/cro-flyttar-fran-storefront/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/cro-moves-from-storefront/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/cro-flyttar-fran-storefront/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/cro-moves-from-storefront/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/cro-flyttar-fran-storefront/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/cro-moves-from-storefront/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/cro-flyttar-fran-storefront/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/trust-signaler-agent/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/trust-signaler-agent/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/trust-signals-for-agents/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/trust-signaler-agent/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/trust-signals-for-agents/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/trust-signaler-agent/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/trust-signals-for-agents/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/trust-signaler-agent/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/silos-effektivitet-marketing/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/silos-effektivitet-marketing/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/silos-efficiency-marketing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/silos-effektivitet-marketing/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/silos-efficiency-marketing/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/silos-effektivitet-marketing/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/silos-efficiency-marketing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/silos-effektivitet-marketing/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/silos-skadliga-marketing-ecom-crm/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/silos-skadliga-marketing-ecom-crm/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/silos-harmful-marketing-ecom-crm/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/silos-skadliga-marketing-ecom-crm/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/silos-harmful-marketing-ecom-crm/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/silos-skadliga-marketing-ecom-crm/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/silos-harmful-marketing-ecom-crm/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/silos-skadliga-marketing-ecom-crm/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/minska-handoffs-friktion/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/minska-handoffs-friktion/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/reduce-handoffs-friction/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/minska-handoffs-friktion/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/reduce-handoffs-friction/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/minska-handoffs-friktion/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/reduce-handoffs-friction/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/minska-handoffs-friktion/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/gemensamma-mal-marketing-ecom-crm/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/gemensamma-mal-marketing-ecom-crm/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/shared-goals-marketing-ecom-crm/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/gemensamma-mal-marketing-ecom-crm/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/shared-goals-marketing-ecom-crm/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/gemensamma-mal-marketing-ecom-crm/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/shared-goals-marketing-ecom-crm/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/gemensamma-mal-marketing-ecom-crm/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/undvik-spretiga-ai-initiativ/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/undvik-spretiga-ai-initiativ/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/avoid-scattered-ai-initiatives/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/undvik-spretiga-ai-initiativ/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/avoid-scattered-ai-initiatives/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/undvik-spretiga-ai-initiativ/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/avoid-scattered-ai-initiatives/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/undvik-spretiga-ai-initiativ/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/agent-governance-enkel/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/agent-governance-enkel/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/agent-governance-simple/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/agent-governance-enkel/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/agent-governance-simple/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/agent-governance-enkel/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/agent-governance-simple/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/agent-governance-enkel/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/mappa-manskliga-ai-tasks/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/mappa-manskliga-ai-tasks/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/map-human-ai-tasks/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/mappa-manskliga-ai-tasks/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/map-human-ai-tasks/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/mappa-manskliga-ai-tasks/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/map-human-ai-tasks/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/mappa-manskliga-ai-tasks/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/tech-stack-krav-ai-effekt/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/tech-stack-krav-ai-effekt/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/tech-stack-requirements-ai-effect/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/tech-stack-krav-ai-effekt/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/tech-stack-requirements-ai-effect/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/tech-stack-krav-ai-effekt/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/tech-stack-requirements-ai-effect/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/tech-stack-krav-ai-effekt/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/ai-tech-stack-spretig/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/ai-tech-stack-spretig/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/ai-tech-stack-fragmented/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/ai-tech-stack-spretig/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/ai-tech-stack-fragmented/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/ai-tech-stack-spretig/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/ai-tech-stack-fragmented/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/ai-tech-stack-spretig/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/experimentmotor-kanalneutralt/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/experimentmotor-kanalneutralt/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/experiment-engine-channel-neutral/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/experimentmotor-kanalneutralt/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/experiment-engine-channel-neutral/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/experimentmotor-kanalneutralt/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/experiment-engine-channel-neutral/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/experimentmotor-kanalneutralt/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/agare-mmm-inkrementalitet/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/agare-mmm-inkrementalitet/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/owner-mmm-incrementality/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/agare-mmm-inkrementalitet/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/owner-mmm-incrementality/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/agare-mmm-inkrementalitet/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/owner-mmm-incrementality/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/agare-mmm-inkrementalitet/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/geo-tester-parallella/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/geo-tester-parallella/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/geo-tests-parallel/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/geo-tester-parallella/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/geo-tests-parallel/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/geo-tester-parallella/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/geo-tests-parallel/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/geo-tester-parallella/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/byra-samarbete-minska-kommunikation/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/byra-samarbete-minska-kommunikation/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/agency-collaboration-reduce-communication/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/byra-samarbete-minska-kommunikation/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/agency-collaboration-reduce-communication/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/byra-samarbete-minska-kommunikation/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/agency-collaboration-reduce-communication/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/byra-samarbete-minska-kommunikation/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/leja-ut-kanal-nar/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/leja-ut-kanal-nar/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/outsource-channel-when/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/leja-ut-kanal-nar/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/outsource-channel-when/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/leja-ut-kanal-nar/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/outsource-channel-when/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/leja-ut-kanal-nar/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/byraer-viktigast-behalla/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/byraer-viktigast-behalla/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/agencies-most-important-keep/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/byraer-viktigast-behalla/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/agencies-most-important-keep/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/byraer-viktigast-behalla/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/agencies-most-important-keep/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/byraer-viktigast-behalla/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/externa-profiler-2026/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/externa-profiler-2026/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/external-profiles-2026/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/externa-profiler-2026/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/external-profiles-2026/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/externa-profiler-2026/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/external-profiles-2026/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/externa-profiler-2026/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/roller-viktigare-ai/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/roller-viktigare-ai/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/roles-more-important-ai/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/roller-viktigare-ai/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/roles-more-important-ai/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/roller-viktigare-ai/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/roles-more-important-ai/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/roller-viktigare-ai/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/leda-team-manniskor-agenter/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/leda-team-manniskor-agenter/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/lead-team-humans-agents/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/leda-team-manniskor-agenter/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/lead-team-humans-agents/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/leda-team-manniskor-agenter/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/lead-team-humans-agents/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/leda-team-manniskor-agenter/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.matildarydow.com/sv/fragor/pii-gdpr-sakerhet/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/pii-gdpr-sakerhet/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/pii-gdpr-security/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/pii-gdpr-sakerhet/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matildarydow.com/en/faq/pii-gdpr-security/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.matildarydow.com/sv/fragor/pii-gdpr-sakerhet/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.matildarydow.com/en/faq/pii-gdpr-security/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.matildarydow.com/sv/fragor/pii-gdpr-sakerhet/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Om / About -->
