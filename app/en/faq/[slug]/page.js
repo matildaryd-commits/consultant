@@ -33,9 +33,9 @@ export default async function EnFAQDetailPage({ params }) {
   const relatedFaqs = getRelatedFaqs(faq.id, 3)
   const personSchema = generatePersonSchema()
 
-  const baseUrl = 'https://matildarydow.com'
+  const baseUrl = 'https://www.matildarydow.com'
   const enSlug = faq.enId || faq.id
-  const pagePath = `/en/faq/${enSlug}`
+  const pagePath = `/en/faq/${enSlug}/`
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -87,13 +87,13 @@ export default async function EnFAQDetailPage({ params }) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: `${baseUrl}/en`,
+        item: `${baseUrl}/en/`,
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Q&A',
-        item: `${baseUrl}/en/faq`,
+        item: `${baseUrl}/en/faq/`,
       },
       {
         '@type': 'ListItem',

@@ -114,7 +114,7 @@ export default function SvLayout({ children }) {
                 ],
                 text: {
                   banner: {
-                    description: "<p>Vi använder cookies för att förbättra din upplevelse och analysera trafiken. <a href='https://matildarydow.com/cookies' target='_blank'>Läs vår cookie-policy.</a></p>",
+                    description: "<p>Vi använder cookies för att förbättra din upplevelse och analysera trafiken. <a href='https://www.matildarydow.com/cookies' target='_blank'>Läs vår cookie-policy.</a></p>",
                     acceptAllButtonText: "Acceptera alla",
                     acceptAllButtonAccessibleLabel: "Acceptera alla cookies",
                     rejectNonEssentialButtonText: "Avvisa",

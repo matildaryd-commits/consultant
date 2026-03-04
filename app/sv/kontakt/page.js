@@ -7,24 +7,24 @@ export const metadata = {
   openGraph: {
     title: 'Boka AI-rådgivning eller Föreläsning',
     description: 'Boka AI-rådgivning, workshop eller föreläsning med Matilda Rydow. Expertis inom martech, data/analytics och AI för marknadsavdelningar.',
-    url: 'https://matildarydow.com/sv/kontakt',
+    url: 'https://www.matildarydow.com/sv/kontakt',
     siteName: 'Matilda Rydow',
     locale: 'sv_SE',
     type: 'website',
-    images: [{ url: 'https://matildarydow.com/matilda-portrait.jpg' }],
+    images: [{ url: 'https://www.matildarydow.com/matilda-portrait.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Boka AI-rådgivning | Matilda Rydow',
     description: 'Boka AI-rådgivning, workshop eller föreläsning.',
-    images: ['https://matildarydow.com/matilda-portrait.jpg'],
+    images: ['https://www.matildarydow.com/matilda-portrait.jpg'],
   },
   alternates: {
-    canonical: 'https://matildarydow.com/sv/kontakt',
+    canonical: 'https://www.matildarydow.com/sv/kontakt',
     languages: {
-      'sv': 'https://matildarydow.com/sv/kontakt',
-      'en': 'https://matildarydow.com/en/contact',
-      'x-default': 'https://matildarydow.com/sv/kontakt',
+      'sv': 'https://www.matildarydow.com/sv/kontakt',
+      'en': 'https://www.matildarydow.com/en/contact',
+      'x-default': 'https://www.matildarydow.com/sv/kontakt',
     },
   },
 }

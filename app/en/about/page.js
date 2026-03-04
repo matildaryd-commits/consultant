@@ -8,24 +8,24 @@ export const metadata = {
   openGraph: {
     title: "Hi, I'm Matilda",
     description: 'Matilda Rydow – AI advisor specializing in martech, data/analytics, and AI agents. Former Group COO at Precis.',
-    url: 'https://matildarydow.com/en/about',
+    url: 'https://www.matildarydow.com/en/about',
     siteName: 'Matilda Rydow',
     locale: 'en_US',
     type: 'website',
-    images: [{ url: 'https://matildarydow.com/matilda-portrait.jpg' }],
+    images: [{ url: 'https://www.matildarydow.com/matilda-portrait.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About | Matilda Rydow',
     description: 'AI advisor specializing in martech, data/analytics, and AI agents.',
-    images: ['https://matildarydow.com/matilda-portrait.jpg'],
+    images: ['https://www.matildarydow.com/matilda-portrait.jpg'],
   },
   alternates: {
-    canonical: 'https://matildarydow.com/en/about',
+    canonical: 'https://www.matildarydow.com/en/about',
     languages: {
-      'sv': 'https://matildarydow.com/sv/om',
-      'en': 'https://matildarydow.com/en/about',
-      'x-default': 'https://matildarydow.com/sv/om',
+      'sv': 'https://www.matildarydow.com/sv/om',
+      'en': 'https://www.matildarydow.com/en/about',
+      'x-default': 'https://www.matildarydow.com/sv/om',
     },
   },
 }

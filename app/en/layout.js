@@ -114,7 +114,7 @@ export default function EnLayout({ children }) {
                 ],
                 text: {
                   banner: {
-                    description: "<p>We use cookies to improve your experience and analyze traffic. <a href='https://matildarydow.com/cookies' target='_blank'>Read our cookie policy.</a></p>",
+                    description: "<p>We use cookies to improve your experience and analyze traffic. <a href='https://www.matildarydow.com/cookies' target='_blank'>Read our cookie policy.</a></p>",
                     acceptAllButtonText: "Accept all",
                     acceptAllButtonAccessibleLabel: "Accept all cookies",
                     rejectNonEssentialButtonText: "Reject",

@@ -9,24 +9,24 @@ export const metadata = {
   openGraph: {
     title: 'AI-konsult för Marknadsföring & Data',
     description: 'AI-konsult som hjälper CMO:er och marknadsavdelningar med martech, data/analytics och AI-agenter. Fd Group COO på Precis.',
-    url: 'https://matildarydow.com/sv/',
+    url: 'https://www.matildarydow.com/sv/',
     siteName: 'Matilda Rydow',
     locale: 'sv_SE',
     type: 'website',
-    images: [{ url: 'https://matildarydow.com/matilda-portrait.jpg' }],
+    images: [{ url: 'https://www.matildarydow.com/matilda-portrait.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AI-konsult för Marknadsföring & Data | Matilda Rydow',
     description: 'AI-konsult som hjälper CMO:er och marknadsavdelningar med martech, data/analytics och AI-agenter.',
-    images: ['https://matildarydow.com/matilda-portrait.jpg'],
+    images: ['https://www.matildarydow.com/matilda-portrait.jpg'],
   },
   alternates: {
-    canonical: 'https://matildarydow.com/sv/',
+    canonical: 'https://www.matildarydow.com/sv/',
     languages: {
-      'sv': 'https://matildarydow.com/sv/',
-      'en': 'https://matildarydow.com/en/',
-      'x-default': 'https://matildarydow.com/sv/',
+      'sv': 'https://www.matildarydow.com/sv/',
+      'en': 'https://www.matildarydow.com/en/',
+      'x-default': 'https://www.matildarydow.com/sv/',
     },
   },
 }
@@ -62,14 +62,14 @@ export default function SvHomePage() {
             '@type': 'WebSite',
             name: 'Matilda Rydow',
             alternateName: 'Matilda Rydow AI Advisor',
-            url: 'https://matildarydow.com',
+            url: 'https://www.matildarydow.com',
             description: 'AI-rådgivare för CMO:er och ledningsgrupper. Expert inom martech, data & analytics och AI-drivna operating models.',
             inLanguage: ['sv-SE', 'en-US'],
             author: {
               '@type': 'Person',
               name: 'Matilda Rydow',
               jobTitle: 'AI Advisor & Consultant',
-              url: 'https://matildarydow.com',
+              url: 'https://www.matildarydow.com',
             },
           }),
         }}

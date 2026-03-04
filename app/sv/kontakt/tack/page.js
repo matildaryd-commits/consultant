@@ -7,18 +7,18 @@ export const metadata = {
   openGraph: {
     title: 'Tack',
     description: 'Tack för ditt meddelande.',
-    url: 'https://matildarydow.com/sv/kontakt/tack',
+    url: 'https://www.matildarydow.com/sv/kontakt/tack',
     siteName: 'Matilda Rydow',
     locale: 'sv_SE',
     type: 'website',
-    images: [{ url: 'https://matildarydow.com/matilda-portrait.jpg' }],
+    images: [{ url: 'https://www.matildarydow.com/matilda-portrait.jpg' }],
   },
   alternates: {
-    canonical: 'https://matildarydow.com/sv/kontakt/tack',
+    canonical: 'https://www.matildarydow.com/sv/kontakt/tack',
     languages: {
-      'sv': 'https://matildarydow.com/sv/kontakt/tack',
-      'en': 'https://matildarydow.com/en/contact/thanks',
-      'x-default': 'https://matildarydow.com/sv/kontakt/tack',
+      'sv': 'https://www.matildarydow.com/sv/kontakt/tack',
+      'en': 'https://www.matildarydow.com/en/contact/thanks',
+      'x-default': 'https://www.matildarydow.com/sv/kontakt/tack',
     },
   },
 }

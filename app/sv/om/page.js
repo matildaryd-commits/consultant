@@ -8,24 +8,24 @@ export const metadata = {
   openGraph: {
     title: 'Hej, jag heter Matilda',
     description: 'Matilda Rydow – AI-rådgivare inom martech, data/analytics och AI-agenter. Fd Group COO på Precis, byggde Alvie och Wilgot.',
-    url: 'https://matildarydow.com/sv/om',
+    url: 'https://www.matildarydow.com/sv/om',
     siteName: 'Matilda Rydow',
     locale: 'sv_SE',
     type: 'website',
-    images: [{ url: 'https://matildarydow.com/matilda-portrait.jpg' }],
+    images: [{ url: 'https://www.matildarydow.com/matilda-portrait.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Om mig | Matilda Rydow',
     description: 'AI-rådgivare inom martech, data/analytics och AI-agenter.',
-    images: ['https://matildarydow.com/matilda-portrait.jpg'],
+    images: ['https://www.matildarydow.com/matilda-portrait.jpg'],
   },
   alternates: {
-    canonical: 'https://matildarydow.com/sv/om',
+    canonical: 'https://www.matildarydow.com/sv/om',
     languages: {
-      'sv': 'https://matildarydow.com/sv/om',
-      'en': 'https://matildarydow.com/en/about',
-      'x-default': 'https://matildarydow.com/sv/om',
+      'sv': 'https://www.matildarydow.com/sv/om',
+      'en': 'https://www.matildarydow.com/en/about',
+      'x-default': 'https://www.matildarydow.com/sv/om',
     },
   },
 }

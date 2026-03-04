@@ -33,8 +33,8 @@ export default async function SvFAQDetailPage({ params }) {
   const relatedFaqs = getRelatedFaqs(faq.id, 3)
   const personSchema = generatePersonSchema()
 
-  const baseUrl = 'https://matildarydow.com'
-  const pagePath = `/sv/fragor/${faq.id}`
+  const baseUrl = 'https://www.matildarydow.com'
+  const pagePath = `/sv/fragor/${faq.id}/`
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -86,13 +86,13 @@ export default async function SvFAQDetailPage({ params }) {
         '@type': 'ListItem',
         position: 1,
         name: 'Hem',
-        item: `${baseUrl}/sv`,
+        item: `${baseUrl}/sv/`,
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Frågor & Svar',
-        item: `${baseUrl}/sv/fragor`,
+        item: `${baseUrl}/sv/fragor/`,
       },
       {
         '@type': 'ListItem',

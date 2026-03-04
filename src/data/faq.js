@@ -869,10 +869,9 @@ export function getRelatedFaqs(faqId, limit = 3) {
 
 // Helper to generate metadata for individual FAQ pages
 export function generateFaqMetadata(faq, lang) {
-  const baseUrl = 'https://matildarydow.com'
+  const baseUrl = 'https://www.matildarydow.com'
   const slug = getFaqId(faq, lang)
-  const pagePath = lang === 'sv' ? `/sv/fragor/${slug}` : `/en/faq/${slug}`
-  const altPath = lang === 'sv' ? `/en/faq/${faq.enId || faq.id}` : `/sv/fragor/${faq.id}`
+  const pagePath = lang === 'sv' ? `/sv/fragor/${slug}/` : `/en/faq/${slug}/`
 
   const question = faq[lang].question
   const answer = faq[lang].answer.replace(/\*\*/g, '').replace(/\n/g, ' ').trim()
@@ -900,9 +899,9 @@ export function generateFaqMetadata(faq, lang) {
     alternates: {
       canonical: `${baseUrl}${pagePath}`,
       languages: {
-        'sv': `${baseUrl}/sv/fragor/${faq.id}`,
-        'en': `${baseUrl}/en/faq/${faq.enId || faq.id}`,
-        'x-default': `${baseUrl}/sv/fragor/${faq.id}`,
+        'sv': `${baseUrl}/sv/fragor/${faq.id}/`,
+        'en': `${baseUrl}/en/faq/${faq.enId || faq.id}/`,
+        'x-default': `${baseUrl}/sv/fragor/${faq.id}/`,
       },
     },
   }
@@ -915,7 +914,7 @@ export function findFaqById(id) {
 
 // Helper to get FAQ schema for SEO and LLM visibility
 export function generateFAQSchema(faqs, lang) {
-  const baseUrl = 'https://matildarydow.com'
+  const baseUrl = 'https://www.matildarydow.com'
   const pagePath = lang === 'sv' ? '/sv/fragor' : '/en/faq'
 
   return {
@@ -957,8 +956,8 @@ export function generatePersonSchema() {
     name: 'Matilda Rydow',
     jobTitle: 'AI Advisor & Consultant',
     description: 'Strategic AI advisor helping Nordic CMOs and leadership teams navigate AI transformation. Expert in martech, data & analytics, and AI-driven operating models with 10+ years of experience.',
-    url: 'https://matildarydow.com',
-    image: 'https://matildarydow.com/matilda-portrait.jpg',
+    url: 'https://www.matildarydow.com',
+    image: 'https://www.matildarydow.com/matilda-portrait.jpg',
     sameAs: [
       'https://www.linkedin.com/in/matilda-rydow-13057161/',
     ],
