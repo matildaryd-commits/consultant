@@ -79,17 +79,16 @@ export default function FAQDetailPage({ faq, relatedFaqs, lang }) {
   return (
     <section className="section">
       <div className="container container--prose">
-        <motion.nav
-          className="faq-detail-nav"
+        <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <Link href={t.faqPath} className="faq-detail-back">
+          <Link href={t.faqPath} className="faq-detail__back">
             <ArrowLeft size={16} />
             <span>{t.backToAll}</span>
           </Link>
-        </motion.nav>
+        </motion.div>
 
         <motion.article
           className="faq-detail"
@@ -97,23 +96,21 @@ export default function FAQDetailPage({ faq, relatedFaqs, lang }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <header className="faq-detail-header">
-            <div className="faq-detail-tags">
-              {faq.categories.map(catId => {
-                const cat = faqCategories.find(c => c.id === catId)
-                return cat ? (
-                  <span key={catId} className="faq-tag">{cat[lang].title}</span>
-                ) : null
-              })}
-            </div>
-            <h1 className="faq-detail-title">{localized.question}</h1>
-            <div className="faq-detail-author">
-              <span>{t.author}</span>
-            </div>
-          </header>
+          <div className="faq-detail__tags">
+            {faq.categories.map(catId => {
+              const cat = faqCategories.find(c => c.id === catId)
+              return cat ? (
+                <span key={catId} className="faq-tag">{cat[lang].title}</span>
+              ) : null
+            })}
+          </div>
+          <h1 className="faq-detail__question">{localized.question}</h1>
+          <div className="faq-detail__author">
+            <span className="faq-detail__author-name">{t.author}</span>
+          </div>
 
           <div
-            className="faq-detail-content"
+            className="faq-detail__answer"
             dangerouslySetInnerHTML={{ __html: formatAnswer(localized.answer) }}
           />
         </motion.article>
@@ -125,15 +122,15 @@ export default function FAQDetailPage({ faq, relatedFaqs, lang }) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <h2 className="faq-related-title">{t.relatedQuestions}</h2>
-            <ul className="faq-related-list">
+            <h2 className="faq-related__title">{t.relatedQuestions}</h2>
+            <ul className="faq-related__list">
               {relatedFaqs.map(relatedFaq => {
                 const relatedSlug = getFaqId(relatedFaq, lang)
                 return (
                   <li key={relatedFaq.id}>
                     <Link
                       href={`${t.faqPath}/${relatedSlug}`}
-                      className="faq-related-link"
+                      className="faq-related__link"
                     >
                       <span>{relatedFaq[lang].question}</span>
                       <ChevronRight size={16} />

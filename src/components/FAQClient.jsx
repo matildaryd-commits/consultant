@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, Link as LinkIcon, ArrowRight } from 'lucide-react'
-import Link from 'next/link'
+import { ChevronDown, Link as LinkIcon } from 'lucide-react'
 import { faqs, faqCategories, getFaqId, findFaqById } from '../data/faq'
 
 const content = {
@@ -34,7 +33,6 @@ Här delar jag löpande frågor & svar, reflektioner och spaningar på ämnet �
     copyLink: 'Kopiera länk',
     linkCopied: 'Länk kopierad!',
     faqPath: '/sv/fragor',
-    readFullAnswer: 'Läs hela svaret',
   },
   en: {
     title: 'Q&A on AI in Marketing',
@@ -63,11 +61,10 @@ Here I share ongoing questions & answers, reflections, and observations on the t
     copyLink: 'Copy link',
     linkCopied: 'Link copied!',
     faqPath: '/en/faq',
-    readFullAnswer: 'Read full answer',
   },
 }
 
-function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery, faqPath, readFullAnswer }) {
+function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery, faqPath }) {
   const localized = faq[lang]
   const [copied, setCopied] = useState(false)
   const faqId = getFaqId(faq, lang)
@@ -133,12 +130,6 @@ function FAQItem({ faq, lang, isOpen, onToggle, index, searchQuery, faqPath, rea
                 __html: formatAnswer(localized.answer, searchQuery)
               }}
             />
-            <div className="faq-item__read-more">
-              <Link href={`${faqPath}/${faqId}`} className="faq-item__read-more-link">
-                <span>{readFullAnswer}</span>
-                <ArrowRight size={14} />
-              </Link>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -369,7 +360,6 @@ export default function FAQClient({ lang }) {
               index={index}
               searchQuery={searchQuery}
               faqPath={t.faqPath}
-              readFullAnswer={t.readFullAnswer}
             />
           ))}
         </div>
