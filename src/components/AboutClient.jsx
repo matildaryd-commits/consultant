@@ -29,6 +29,13 @@ Utöver att hjälpa bolag med martech, data/analytics och AI är jag ängelinves
       items: [
         {
           type: 'podcast',
+          title: 'Ny marketing operating model när AI kliver in i marknadsteamet',
+          source: 'Digital Marknadsföring med Tony Hammarlund #163',
+          url: 'https://tonyhammarlund.io/matilda-rydow-163/',
+          thumbnail: '/tony-hammarlund-podcast.webp',
+        },
+        {
+          type: 'podcast',
           title: 'Så lyckas ni med datadriven marknadsföring',
           source: 'Erik Modigs podd "Marknadsföring som säljer"',
           url: 'https://www.youtube.com/watch?v=h7Wz8NOryvI',
@@ -80,6 +87,13 @@ Beyond helping companies with martech, data/analytics, and AI, I'm an angel inve
     media: {
       title: 'In media',
       items: [
+        {
+          type: 'podcast',
+          title: 'A new marketing operating model as AI enters the marketing team',
+          source: 'Digital Marknadsföring med Tony Hammarlund #163',
+          url: 'https://tonyhammarlund.io/matilda-rydow-163/',
+          thumbnail: '/tony-hammarlund-podcast.webp',
+        },
         {
           type: 'podcast',
           title: 'How to succeed with data-driven marketing',
