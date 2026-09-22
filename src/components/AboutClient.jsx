@@ -10,7 +10,7 @@ const content = {
     portraitAlt: 'Porträtt av Matilda Rydow',
     intro: `Jag jobbar med <strong>martech, data/analytics och AI</strong>. Jag hjälper team att bygga lösningar och arbetssätt som gör att data och AI faktiskt används: från <strong>mätning, datamodeller och arkitektur</strong> till <strong>produktbeslut, prioriteringar</strong> och hur <strong>AI‑agenter</strong> vävs in i flöden, ansvar och verktyg. Men tech är sällan hela svaret. Jag lägger lika mycket vikt vid det organisatoriska: <strong>tydliga roller, bra beslutsfattande</strong>, rimliga processer och samarbete som håller över tid. När tech och organisation drar åt samma håll händer det saker – och det är där jag brukar göra störst skillnad.
 
-Utöver att hjälpa bolag med martech, data/analytics och AI är jag ängelinvesterare. Tidigare har jag varit Group COO och VD på <strong>Precis</strong>, Martech Lead på Ving/Thomas Cook, och byggt Alvie (<strong>attribution/marketing intelligence</strong>) samt Wilgot (<strong>agentic commerce</strong>/GEO).`,
+Just nu är jag <strong>CCO (fractional) på Odyssey</strong> (brand intelligence). Utöver det är jag ängelinvesterare. Tidigare har jag varit Group COO och VD på <strong>Precis</strong>, Martech Lead på Ving/Thomas Cook, och byggt Alvie (<strong>attribution/marketing intelligence</strong>) samt Wilgot (<strong>agentic commerce</strong>/GEO).`,
     interests: {
       title: 'Vad jag tänker på',
       items: [
@@ -70,7 +70,7 @@ Utöver att hjälpa bolag med martech, data/analytics och AI är jag ängelinves
     portraitAlt: 'Portrait of Matilda Rydow',
     intro: `I work with <strong>martech, data/analytics, and AI</strong>. I help teams build solutions and ways of working that make data and AI actually used: from <strong>measurement, data models, and architecture</strong> to <strong>product decisions and priorities</strong>, and how <strong>AI agents</strong> are embedded in flows, ownership, and tools. But tech is rarely the whole answer. I put equal weight on the organizational side: <strong>clear roles and solid decision‑making</strong>, reasonable processes, and collaboration that holds up over time. When tech and organization pull in the same direction, things happen. That's where I tend to make the biggest difference.
 
-Beyond helping companies with martech, data/analytics, and AI, I'm an angel investor. Previously I was Group COO and CEO at <strong>Precis</strong>, Martech Lead at Ving/Thomas Cook, and built Alvie (<strong>attribution/marketing intelligence</strong>) and Wilgot (<strong>agentic commerce</strong>/GEO).`,
+I'm currently <strong>CCO (fractional) at Odyssey</strong> (brand intelligence). Beyond that, I'm an angel investor. Previously I was Group COO and CEO at <strong>Precis</strong>, Martech Lead at Ving/Thomas Cook, and built Alvie (<strong>attribution/marketing intelligence</strong>) and Wilgot (<strong>agentic commerce</strong>/GEO).`,
     interests: {
       title: 'What I think about',
       items: [

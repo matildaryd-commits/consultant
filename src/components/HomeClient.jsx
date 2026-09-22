@@ -9,7 +9,7 @@ const content = {
   sv: {
     greeting: 'Hej, jag heter Matilda.',
     title: 'Jag hjälper CMO:er och ledningsgrupper att navigera AI.',
-    bio: 'Min expertis är martech, data & analytics och AI. Jag hjälper in-house team bygga en framtidssäkrad operational model, där teamet jobbar sida vid sida med AI-agenter, byråer och martech-stacken. Jag har varit <strong>Group COO och VD på Precis</strong>, Martech Lead på <strong>Ving/Thomas Cook</strong>, och byggt <strong>Alvie</strong> (attribution/marketing intelligence) samt <strong>Wilgot</strong> (agentic commerce/GEO).',
+    bio: 'Min expertis är martech, data & analytics och AI. Just nu är jag <strong>CCO (fractional) på Odyssey</strong> (brand intelligence). Jag hjälper in-house team bygga en framtidssäkrad operational model, där teamet jobbar sida vid sida med AI-agenter, byråer och martech-stacken. Jag har varit <strong>Group COO och VD på Precis</strong>, Martech Lead på <strong>Ving/Thomas Cook</strong>, och byggt <strong>Alvie</strong> (attribution/marketing intelligence) samt <strong>Wilgot</strong> (agentic commerce/GEO).',
     status: 'Tillgänglig för strategiska samtal',
     links: {
       linkedin: 'LinkedIn',
@@ -30,7 +30,7 @@ const content = {
   en: {
     greeting: "Hi, I'm Matilda.",
     title: 'I help CMOs and leadership teams navigate AI.',
-    bio: 'My expertise is martech, data & analytics, and AI. I help in-house teams build a future-proof operational model, where the team works side by side with AI agents, agencies, and the martech stack. I was <strong>Group COO and CEO at Precis</strong>, Martech Lead at <strong>Ving/Thomas Cook</strong>, and I built <strong>Alvie</strong> (attribution/marketing intelligence) and <strong>Wilgot</strong> (agentic commerce/GEO).',
+    bio: 'My expertise is martech, data & analytics, and AI. I\'m currently <strong>CCO (fractional) at Odyssey</strong> (brand intelligence). I help in-house teams build a future-proof operational model, where the team works side by side with AI agents, agencies, and the martech stack. I was <strong>Group COO and CEO at Precis</strong>, Martech Lead at <strong>Ving/Thomas Cook</strong>, and I built <strong>Alvie</strong> (attribution/marketing intelligence) and <strong>Wilgot</strong> (agentic commerce/GEO).',
     status: 'Available for strategic conversations',
     links: {
       linkedin: 'LinkedIn',

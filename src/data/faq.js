@@ -984,6 +984,11 @@ export function generatePersonSchema() {
       },
       description: 'Advising CMOs and leadership teams on AI strategy, operating models, and marketing transformation',
     },
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Odyssey',
+      description: 'Fractional CCO — brand intelligence',
+    },
     alumniOf: [
       { '@type': 'Organization', name: 'Precis', description: 'Group COO and CEO' },
       { '@type': 'Organization', name: 'Ving/Thomas Cook', description: 'Martech Lead' },
